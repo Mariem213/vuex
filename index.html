@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vuexy</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- Side Navigation -->
+    <section class="sideNav" id="sideNav">
+        <ul class="sideNav-links">
+            <li class="logo">
+                <a href="#">
+                    <img src="images/logo.36f34a9f.svg" alt="logoImage" />
+                    <h2>Vuexy</h2>
+                </a>
+                <i class="circle far fa-dot-circle"></i>
+                <i class="close fas fa-times"></i>
+            </li>
+            <li class="sideNav-dropDown">
+                <div onclick="dashboardDropDown()" class="dropdown-header" id="dash-dropdown-header">
+                    <div class="header-content">
+                        <i class="fas fa-home"></i>
+                        <button class="btn">Dashboards</button>
+                        <span class="dash-number">2</span>
+                    </div>
+                </div>
+
+                <div id="dash-dropdown-content" class="dropdown-content">
+                    <a href="#"> <i class="far fa-circle"></i> eCommerce</a>
+                    <a href="#"> <i class="far fa-circle"></i> Analytics</a>
+                </div>
+            </li>
+            <li class="sideNav-item">
+                <span>Apps & Pages</span>
+                <ul>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-envelope"></i>
+                            <button class="btn">Email</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-comment-alt"></i>
+                            <button class="btn">Chat</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-check-circle"></i>
+                            <button class="btn">Todo</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-calendar-alt"></i>
+                            <button class="btn">Calender</button>
+                        </div>
+                    </li>
+                    <li class="sideNav-dropDown">
+                        <div onclick="invoiceDropDown()" class="dropdown-header" id="invoice-dropdown-header">
+                            <div class="header-content">
+                                <i class="far fa-file-alt"></i>
+                                <button class="btn">Invoice</button>
+                            </div>
+                        </div>
+
+                        <div id="invoice-dropdown-content" class="dropdown-content">
+                            <a href="#"> <i class="far fa-circle"></i> List</a>
+                            <a href="#"> <i class="far fa-circle"></i> Preview</a>
+                            <a href="#"> <i class="far fa-circle"></i> Edit</a>
+                            <a href="#"> <i class="far fa-circle"></i> Add</a>
+                        </div>
+                    </li>
+                    <li class="sideNav-dropDown">
+                        <div onclick="ecoDropDown()" class="dropdown-header" id="eco-dropdown-header">
+                            <div class="header-content">
+                                <i class="fas fa-cart-arrow-down"></i>
+                                <button class="btn"><h4>eCommerce</h4></button>
+                            </div>
+                        </div>
+
+                        <div id="eco-dropdown-content" class="dropdown-content">
+                            <a href="#" class="active">
+                                <i class="far fa-circle"></i> Shop
+                            </a>
+                            <a href="#"> <i class="far fa-circle"></i> Details</a>
+                            <a href="#"> <i class="far fa-circle"></i> Wishlist</a>
+                            <a href="#"> <i class="far fa-circle"></i> Checkout</a>
+                        </div>
+                    </li>
+                    <li class="sideNav-dropDown">
+                        <div onclick="userDropDown()" class="dropdown-header" id="user-dropdown-header">
+                            <div class="header-content">
+                                <i class="far fa-user"></i>
+                                <button class="btn"><h4>User</h4></button>
+                            </div>
+                        </div>
+
+                        <div id="user-dropdown-content" class="dropdown-content">
+                            <a href="#"> <i class="far fa-circle"></i> List </a>
+                            <a href="#"> <i class="far fa-circle"></i> View </a>
+                            <a href="#"> <i class="far fa-circle"></i> Edit </a>
+                        </div>
+                    </li>
+                    <li class="sideNav-dropDown">
+                        <div onclick="pageDropDown()" class="dropdown-header" id="page-dropdown-header">
+                            <div class="header-content">
+                                <i class="far fa-file"></i>
+                                <button class="btn"><h4>Pages</h4></button>
+                            </div>
+                        </div>
+                        <div id="page-dropdown-content" class="dropdown-content">
+                            <a href="#"> <i class="far fa-circle"></i> Authentication </a>
+                            <a href="#"> <i class="far fa-circle"></i> Account Settings </a>
+                            <a href="#"> <i class="far fa-circle"></i> Profile </a>
+                            <a href="#"> <i class="far fa-circle"></i> Faq </a>
+                            <a href="#"> <i class="far fa-circle"></i> Knowledge Base </a>
+                            <a href="#"> <i class="far fa-circle"></i> Pricing </a>
+                            <a href="#"> <i class="far fa-circle"></i> Blog </a>
+                            <a href="#"> <i class="far fa-circle"></i> Mail Templates </a>
+                            <a href="#"> <i class="far fa-circle"></i> Miscellaneous </a>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="sideNav-item">
+                <span>User Interface</span>
+                <ul>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-text-height"></i>
+                            <button class="btn">Typography</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-tint"></i>
+                            <button class="btn">Colors</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-eye"></i>
+                            <button class="btn">Feather</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-credit-card"></i>
+                            <button class="btn">Cards</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-server"></i>
+                            <button class="btn">Components</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-plus-circle"></i>
+                            <button class="btn">Extensions</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-layer-group"></i>
+                            <button class="btn">Page Layouts</button>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="sideNav-item">
+                <span>Forms & Tables</span>
+                <ul>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-copy"></i>
+                            <button class="btn">Forms Elements</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-copy"></i>
+                            <button class="btn">Form Layout</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-cube"></i>
+                            <button class="btn">Form Wizard</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-check-circle"></i>
+                            <button class="btn">Form Validation</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-copy"></i>
+                            <button class="btn">Form Repeater</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-table"></i>
+                            <button class="btn">BS Table</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-th-large"></i>
+                            <button class="btn">Good Table</button>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="sideNav-item">
+                <span>Charts & Maps</span>
+                <ul>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-chart-pie"></i>
+                            <button class="btn">Charts</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-chart-bar"></i>
+                            <button class="btn">Leaflet</button>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="sideNav-item">
+                <span>Others</span>
+                <ul>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-shield-blank"></i>
+                            <button class="btn">Access Control</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="fas fa-bars"></i>
+                            <button class="btn">Menu Levels</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content" disabled style="color: rgb(184, 177, 177)">
+                            <i class="far fa-eye-slash"></i>
+                            <button class="btn">Disabled Menu</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-life-ring"></i>
+                            <button class="btn">Raise Support</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header-content">
+                            <i class="far fa-file-alt"></i>
+                            <button class="btn">Documentation</button>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="container">
+        <!-- Horizental NavBar with All Dropdown -->
+        <div class="horizontal-nav">
+            <!-- Horizental NavBar -->
+            <nav id="navbar">
+                <div class="left-nav">
+                    <ul>
+                        <li>
+                            <button class="toggle-menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <div class="tooltip">Calender App</div>
+                            <i class="far fa-calendar-alt"></i>
+                        </li>
+                        <li>
+                            <div class="tooltip" id="toolChat">Chat</div>
+                            <i class="far fa-comment-alt"></i>
+                        </li>
+                        <li>
+                            <div class="tooltip" id="toolEmail">Email</div>
+                            <i class="far fa-envelope"></i>
+                        </li>
+                        <li>
+                            <div class="tooltip" id="toolTodo">Todo</div>
+                            <i class="far fa-check-circle"></i>
+                        </li>
+                        <li>
+                            <i class="stars far fa-star" id="StarIcon"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-nav">
+                    <div class="trans">
+                        <img src="images/uspng.png" alt="united state" />
+                        <p>English</p>
+                    </div>
+                    <div class="right-icons">
+                        <div class="theme" onclick="darkTheme()">
+                            <i class="far fa-moon"></i>
+                        </div>
+                        <div class="search-icon">
+                            <i class="fas fa-search" id="search-icon"></i>
+                        </div>
+                        <div class="cart-icon">
+                            <i class="fas fa-cart-arrow-down"></i>
+                        </div>
+                        <div class="notfi-icon">
+                            <a class="notification-link">
+                                <i class="notification fas fa-bell" id="notification"></i>
+                                <span class="notifi-number" id="notifi-num">6</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile">
+                        <div class="user-info">
+                            <h3>Mariem Elgendy</h3>
+                            <p>admin</p>
+                        </div>
+                        <img src="images/profile.jpg" alt="Profile Image" />
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Search Icon Content -->
+            <div class="form" id="search">
+                <input type="text" class="form-input" placeholder="Search Here" />
+                <button class="close-icon">
+                <i class="fas fa-times" id="close-setting-icon"></i>
+            </button>
+            </div>
+
+            <!-- Start Dropdown -->
+            <div class="star-dropdown" id="starDropdown">
+                <input type="text" placeholder="Explore Vuexy..." id="" />
+                <div class="star-content">
+                    <a href=""><i class="far fa-calendar-alt"></i> Calender App </a>
+                    <i class="star far fa-star"></i>
+                </div>
+                <div class="star-content">
+                    <a href=""><i class="far fa-comment-alt"></i> Chat </a>
+                    <i class="star far fa-star"></i>
+                </div>
+                <div class="star-content">
+                    <a href=""><i class="far fa-envelope"></i> Email</a>
+                    <i class="star far fa-star"></i>
+                </div>
+                <div class="star-content">
+                    <a href=""><i class="far fa-check-circle"></i> Todo </a>
+                    <i class="star far fa-star"></i>
+                </div>
+            </div>
+
+            <!-- Notification Dropdown -->
+            <div class="notifi-dropdown" id="notifiDropdown">
+                <div class="notifi-content">
+                    <div class="notifi-info">
+                        <h4>Notifications</h4>
+                    </div>
+                </div>
+                <div class="notifi-content">
+                    <div class="notifi-img-content">
+                        <img src="images/6-small.c9b47a98.png" class="notifi-img" />
+                    </div>
+                    <div class="notifi-info">
+                        <h4>Congratulation Sam 🎉</h4>
+                        <p class="notifi-desc">Won the monthly best seller badge</p>
+                    </div>
+                </div>
+                <div class="notifi-content">
+                    <div class="notifi-img-content">
+                        <img src="images/9-small.30df7a62.png" class="notifi-img" />
+                    </div>
+                    <div class="notifi-info">
+                        <h4>New message received</h4>
+                        <p class="notifi-desc">You have 10 unread messages</p>
+                    </div>
+                </div>
+                <div class="notifi-content">
+                    <div class="notifi-img-content">
+                        <img src="images/6-small.c9b47a98.png" class="notifi-img" />
+                    </div>
+                    <div class="notifi-info">
+                        <h4>Congratulation Sam 🎉</h4>
+                        <p class="notifi-desc">Won the monthly best seller badge</p>
+                    </div>
+                </div>
+                <div class="notifi-content">
+                    <div class="notifi-img-content">
+                        <img src="images/9-small.30df7a62.png" class="notifi-img" />
+                    </div>
+                    <div class="notifi-info">
+                        <h4>New message received</h4>
+                        <p class="notifi-desc">You have 10 unread messages</p>
+                    </div>
+                </div>
+                <div class="notifi-content">
+                    <div class="notifi-img-content">
+                        <img src="images/6-small.c9b47a98.png" class="notifi-img" />
+                    </div>
+                    <div class="notifi-info">
+                        <h4>Congratulation Sam 🎉</h4>
+                        <p class="notifi-desc">Won the monthly best seller badge</p>
+                    </div>
+                </div>
+                <div class="notifi-content">
+                    <div class="notifi-img-content">
+                        <img src="images/9-small.30df7a62.png" class="notifi-img" />
+                    </div>
+                    <div class="notifi-info">
+                        <h4>New message received</h4>
+                        <p class="notifi-desc">You have 10 unread messages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <!-- Page Content -->
+            <div class="shopContainer">
+                <section class="shopHeader">
+                    <div class="row">
+                        <div class="left">
+                            <button class="toggle-menu-two">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <h2>Shop</h2>
+                            <a href="" class="home-icon"><i class="fas fa-home"></i></a>
+                            <i class="arrow-icon fas fa-angle-right"></i>
+                            <h4><a href="">ECommerce</a></h4>
+                            <i class="arrow-icon fas fa-angle-right"></i>
+                            <p>Shop</p>
+                        </div>
+                        <div class="right">
+                            <i class="setting fas fa-cog" id="setting"></i>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Setting Dropdown -->
+            <div class="setting-dropdown" id="settingDropdown">
+                <div class="setting-content">
+                    <i class="far fa-check-circle"></i>
+                    <a href="">Todo</a>
+                </div>
+                <div class="setting-content">
+                    <i class="far fa-comment-alt"></i>
+                    <a href="">Chat</a>
+                </div>
+                <div class="setting-content">
+                    <i class="far fa-envelope"></i>
+                    <a href="">Email</a>
+                </div>
+                <div class="setting-content">
+                    <i class="far fa-calendar-alt"></i>
+                    <a href="">Calender</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <section class="shopContent">
+            <div class="first-content">
+                <div class="filters" id="filter">
+                    <h3>Filters</h3>
+                    <div class="filter-desc">
+                        <i class="closefilter fas fa-times"></i>
+                        <div class="filter-desc-content">
+                            <div class="filter-desc-title">
+                                <h2>Multi Range</h2>
+                            </div>
+                            <div class="filter-desc-header">
+                                <div>
+                                    <input type="radio" id="all" name="multiRange" checked />
+                                    <label for="all">All</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="ls10" name="multiRange" />
+                                    <label for="ls10"><=$10</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="x10w100" name="multiRange" />
+                                    <label for="x10w100">$10 - $100</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="100w500" name="multiRange" />
+                                    <label for="100w500">$100 - $500</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="gt500" name="multiRange" />
+                                    <label for="gt500">>=$500</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-desc-content">
+                            <div class="filter-desc-title">
+                                <h2>Price Range</h2>
+                            </div>
+                            <div class="filter-desc-header">
+                                <div class="rang-values">
+                                    <span id="range-1">0</span>
+                                    <span>&dash;</span>
+                                    <span id="range-2">1000</span>
+                                </div>
+                                <div class="range-content">
+                                    <div class="slider-track"></div>
+                                    <input type="range" min="0" max="1000" value="0" id="range-slide-1" oninput="slideOneFun()" />
+                                    <input type="range" min="0" max="1000" value="500" id="range-slide-2" oninput="slideTwoFun()" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-desc-content">
+                            <div class="filter-desc-title">
+                                <h2>Categories</h2>
+                            </div>
+                            <div class="filter-desc-header">
+                                <div>
+                                    <input type="radio" id="appli" name="categories" />
+                                    <label for="appli">Appliances</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="audio" name="categories" />
+                                    <label for="audio">Audio</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="cc" name="categories" />
+                                    <label for="cc">Cameras & Camcorders</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="ceg" name="categories" />
+                                    <label for="ceg">Car Electronics & GPS</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="cp" name="categories" />
+                                    <label for="cp">Cell Phones</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="ct" name="categories" />
+                                    <label for="ct">Computers & Tablets</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="hfb" name="categories" />
+                                    <label for="hfb">Health, Fitness & Beauty</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="oss" name="categories" />
+                                    <label for="oss">Office & School Supplies</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="tv" name="categories" />
+                                    <label for="tv">TV & Home Theater</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="vg" name="categories" />
+                                    <label for="vg">Video Games</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-desc-content">
+                            <div class="filter-desc-title">
+                                <h2>Brands</h2>
+                            </div>
+                            <div class="filter-desc-header">
+                                <div>
+                                    <input type="radio" id="insignia" name="brand" />
+                                    <label for="insignia">Insignia™</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="samsung" name="brand" />
+                                    <label for="samsung">Samsung</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="metra" name="brand" />
+                                    <label for="metra">Metra</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="hp" name="brand" />
+                                    <label for="hp">HP</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="apple" name="brand" />
+                                    <label for="apple">Apple</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="ge" name="brand" />
+                                    <label for="ge">GE</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="sony" name="brand" />
+                                    <label for="sony">Sony</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="incipio" name="brand" />
+                                    <label for="incipio">Incipio</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="kitchenAid" name="brand" />
+                                    <label for="kitchenAid">KitchenAid</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="whirlpool" name="brand" />
+                                    <label for="whirlpool">Whirlpool</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-desc-content">
+                            <div class="filter-desc-title">
+                                <h2>Ratings</h2>
+                            </div>
+                            <div class="filter-desc-header">
+                                <div>
+                                    <div class="left">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <a href=""> & up</a>
+                                    </div>
+                                    <div class="right">
+                                        <span>160</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="left">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <a href=""> & up</a>
+                                    </div>
+                                    <div class="right">
+                                        <span>176</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="left">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <a href=""> & up</a>
+                                    </div>
+                                    <div class="right">
+                                        <span>291</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="left">
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <a href=""> & up</a>
+                                    </div>
+                                    <div class="right">
+                                        <span>190</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shopDescription">
+                <div class="second-content">
+                    <div class="searchBar">
+                        <div class="searchHeader">
+                            <div class="left">
+                                <p><span>27</span> results found</p>
+                            </div>
+                            <div class="right">
+                                <div class="feature-btn">
+                                    <button id="feature"> Features <i class="fas fa-angle-down"></i></button>
+                                </div>
+                                <div class="feature-icon">
+                                    <button id="portraitBtn"><i class="fas fa-th-large" id="portraitBtnIcon"></i></button>
+                                    <button id="landscapeBtn"><i class="fas fa-bars" id="landscapeBtnIcon"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="searchContent" id="searchContent">
+                            <input type="text" class="searchBar-input" placeholder="Search Here" id="searchFilter" onkeyup="searchFilteredFunction(this.value)" />
+                            <i class="fas fa-search" id="searchBar-icon"></i>
+                        </div>
+                        <!-- Features Dropdown -->
+                        <div class="feature-dropdown" id="featureDropdown">
+                            <div class="feature-content" id="featured">
+                                <a>Featured</a>
+                            </div>
+                            <div class="feature-content" id="lowest">
+                                <a>Lowest</a>
+                            </div>
+                            <div class="feature-content" id="heighest">
+                                <a>Heighest</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Filtered -->
+                    <ul id="searchFilteredResult" class="searchFiltere-list"></ul>
+
+                    <!-- Setting Box -->
+                    <div class="settings-box" id="settings-box">
+                        <div class="settings-icon">
+                            <i class="fas fa-cog fa-spin"></i>
+                        </div>
+                        <div class="settings-container">
+                            <div class="option-header">
+                                <h3>Theme Customizer</h3>
+                                <p>Customize & Preview in Real Time</p>
+                                <button class="close-icon close-btn" id="close-option-icon">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="option-box">
+                                <div class="option-box-first">
+                                    <h4>Skin</h4>
+                                    <div class="option-box-first-btn">
+                                        <div>
+                                            <input type="radio" id="light-btn" name="skin" checked />
+                                            <label for="light-btn">Light</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="bordered-btn" name="skin" />
+                                            <label for="bordered-btn">Bordered</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="dark-btn" name="skin" />
+                                            <label for="dark-btn">Dark</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="semidark-btn" name="skin" />
+                                            <label for="semidark-btn">Semi Dark</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option-box-second">
+                                    <h4>Content Width</h4>
+                                    <div class="option-box-second-btn">
+                                        <div>
+                                            <input type="radio" id="full-btn" name="width" checked />
+                                            <label for="full-btn">Full Width</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="boxed-btn" name="width" />
+                                            <label for="boxed-btn">Boxed</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option-box-third">
+                                    <h4>RTL</h4>
+                                    <div class="option-box-third-btn">
+                                        <input type="checkbox" />
+                                        <span class="slider"></span>
+                                    </div>
+                                </div>
+                                <div class="option-box-forth">
+                                    <h4>Router Transition</h4>
+                                    <div class="option-box-forth-btn">
+                                        <select>
+                                            <option class="option-active">Zoom Fade</option>
+                                            <option class="option-2">Fade</option>
+                                            <option class="option-2">Fade Bottom</option>
+                                            <option class="option-2">Slide Fade</option>
+                                            <option class="option-2">Zoom out</option>
+                                            <option class="option-2">None</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="option-box-second">
+                                    <h4>Menu Layout</h4>
+                                    <div class="option-box-second-btn">
+                                        <div>
+                                            <input type="radio" id="vertical" name="menu" checked />
+                                            <label for="vertical">Vertical</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="horizontal" name="menu" />
+                                            <label for="horizontal">Horizontal</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option-box-third">
+                                    <h4>Menu Collapsed</h4>
+                                    <div class="option-box-third-btn">
+                                        <input type="checkbox" />
+                                        <span class="slider"></span>
+                                    </div>
+                                </div>
+                                <div class="option-box-third">
+                                    <h4>Menu Hidden</h4>
+                                    <div class="option-box-third-btn">
+                                        <input type="checkbox" />
+                                        <span class="slider"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="option-box-fifth">
+                                    <h4>Navbar Color</h4>
+                                    <div class="colors">
+                                        <div class="colorDivFirst"></div>
+                                        <div class="colorDivSecond"></div>
+                                        <div class="colorDivThird"></div>
+                                        <div class="colorDivForth"></div>
+                                        <div class="colorDivFifth"></div>
+                                        <div class="colorDivSix"></div>
+                                        <div class="colorDivSeven"></div>
+                                        <div class="colorDivEight"></div>
+                                    </div>
+                                </div>
+                                <div class="option-box-first">
+                                    <h4>Navbar Type</h4>
+                                    <div class="option-box-first-btn">
+                                        <div>
+                                            <input type="radio" id="float-btn" name="navbartype" checked />
+                                            <label for="float-btn">Floating</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="sticky-btn" name="navbartype" />
+                                            <label for="sticky-btn">Sticky</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="static-btn" name="navbartype" />
+                                            <label for="static-btn">Static</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="hidden-btn" name="navbartype" />
+                                            <label for="hidden-btn">Hidden</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option-box">
+                                <div class="option-box-first">
+                                    <h4>Footer Type</h4>
+                                    <div class="option-box-first-btn">
+                                        <div>
+                                            <input type="radio" id="sticky-footer-btn" name="footertype" />
+                                            <label for="sticky-footer-btn">Sticky</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="static-footer-btn" name="footertype" checked />
+                                            <label for="static-footer-btn">Static</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="hidden-footer-btn" name="footertype" />
+                                            <label for="hidden-footer-btn">Hidden</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="third-content">
+                    <div>
+                        <div class="shopDescriptionContent" id="shopDescriptionContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forth-content">
+                <div class="slider-btn">
+                    <i class="fas fa-angle-left left"></i>
+                    <button class="slidActive first">1</button>
+                    <button class="second">2</button>
+                    <button class="third">3</button>
+                    <i class="fas fa-angle-right right"></i>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <footer>
+        <div class="fifth-content">
+            <p>COPYRIGHT © 2022 <span> Pixinvent</span>, All rights Reserved</p>
+            <p>Hand-crafted & Made with <i class="far fa-heart"></i></p>
+        </div>
+
+        <div class="six-content">
+            <!-- Start Button Up -->
+            <button class="btn-up">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            <!-- Start Buy Button -->
+            <button class="buyBtn">Buy Now</button>
+        </div>
+    </footer>
+
+    <script src="JS/main.js"></script>
+</body>
+
+</html>

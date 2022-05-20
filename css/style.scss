@@ -1,0 +1,1706 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import "variables";
+@import "mixin";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    @include transition;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    direction: ltr;
+    background-color: #f8f8f8;
+    color: $third-color;
+    line-height: 1.7;
+}
+
+html {
+    font-size: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+/*-----------[ Side Navigation ]------------ */
+
+.sideNav {
+    @include flex-f-s;
+    align-items: flex-start;
+    position: fixed;
+    background: $secondary-color;
+    height: 100%;
+    width: 17%;
+    left: 0;
+    top: 0;
+    box-shadow: -0.6rem -0.3rem 1.4rem 0 rgb(34 41 47 / 25%);
+    overflow-y: scroll;
+    .sideNav-links {
+        list-style: none;
+        margin-left: 0.7rem;
+        padding-top: 1.4rem;
+        padding: auto;
+        .logo {
+            @include flex-f-s;
+            a {
+                text-decoration: none;
+                @include flex-f-s;
+                width: 80%;
+                img {
+                    width: 19%;
+                }
+                h2 {
+                    color: $main-color;
+                    padding-left: 0.6rem;
+                    font-weight: 600;
+                    letter-spacing: .01rem;
+                    font-size: 1.45rem;
+                }
+            }
+            i {
+                color: $main-color;
+                width: 20%;
+                margin: auto;
+                margin-top: 0.7rem;
+                &.close {
+                    display: none;
+                }
+            }
+        }
+        .header-content {
+            &:hover {
+                @include transform(0.3rem);
+            }
+            i {
+                color: $third-color;
+                margin-left: 0.3rem;
+            }
+            .btn {
+                color: $third-color;
+                background-color: transparent;
+                padding: 1rem;
+                font-size: 1rem;
+                font-weight: 300;
+                border: none;
+                cursor: pointer;
+            }
+            .dash-number {
+                position: absolute;
+                top: 0.8rem;
+                right: 2.3rem;
+                padding: 0px 0.3rem;
+                background-color: rgba(255, 159, 67, .12);
+                color: #ff9f43;
+                font-size: 0.9rem;
+                font-weight: 600;
+                @include b-r(50%);
+            }
+        }
+        .sideNav-dropDown {
+            position: relative;
+            display: inline-block;
+            width: 98%;
+            margin-top: 1.4rem;
+            .dropdown-header {
+                &:after {
+                    content: '\f105';
+                    font: normal normal normal 17px/1 FontAwesome;
+                    color: $third-color;
+                    right: 0.72rem;
+                    top: 0.1rem;
+                    height: 2rem;
+                    padding: 1rem 0px 0px 0.6rem;
+                    position: absolute;
+                    cursor: pointer;
+                }
+                &.dropdown-Background {
+                    background-color: $btn-bgcolor;
+                    @include b-r(0.7rem);
+                }
+            }
+            &:hover .dropdown-header:after {
+                content: '\f078';
+            }
+            .dropdown-content {
+                width: 100%;
+                display: none;
+                background: $secondary-color;
+                min-width: 10rem;
+                z-index: 20;
+                a {
+                    color: $third-color-opacity;
+                    padding: 0.8rem 1rem;
+                    text-decoration: none;
+                    display: block;
+                    &:hover {
+                        @include transform(0.2rem);
+                    }
+                    i {
+                        font-size: 0.7rem;
+                        padding-right: 1rem;
+                    }
+                }
+                &.dropdown-show {
+                    display: block;
+                }
+            }
+        }
+        .sideNav-item {
+            margin-top: 1.4rem;
+            span {
+                font-size: 0.8rem;
+                padding-left: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $third-color-opacity;
+            }
+            li {
+                @include flex-f-s;
+                margin-bottom: 1.1rem;
+                i {
+                    padding-right: 2.3rem;
+                    font-size: 1.2rem;
+                    width: 12%;
+                }
+                h4 {
+                    font-weight: 400;
+                    width: 60%;
+                }
+            }
+            .sideNav-dropDown {
+                display: inline-block;
+                margin-top: 0;
+                margin-left: -0.01rem;
+                a {
+                    i {
+                        font-size: 0.72rem;
+                        padding-right: 0.5rem;
+                    }
+                }
+            }
+            .header-content {
+                @include flex-f-s;
+                cursor: pointer;
+            }
+            .btn {
+                padding: 0.7rem 0;
+            }
+            .dropdown-header {
+                &:after {
+                    padding: 0.7rem 0px 0px 0.6rem;
+                }
+            }
+        }
+        .active {
+            background-color: $main-color;
+            color: $secondary-color !important;
+            box-shadow: 0.01rem 0.01rem 0.3rem 0px rgb(0 0 0 / 80%);
+            @include b-r(0.7rem);
+            margin-top: 0.7rem;
+            i {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+
+/*-----------[ Page Content ]------------ */
+
+.container {
+    @include flex-f-s;
+    justify-content: center;
+    position: relative;
+    width: 83%;
+    left: 16rem;
+    .close-icon {
+        position: absolute;
+        top: 0.7rem;
+        right: 1.5rem;
+        border: 0;
+        cursor: pointer;
+        background: $secondary-color;
+        i {
+            color: $third-color;
+            font-size: 1.5rem;
+            margin-top: 0.3rem;
+        }
+    }
+    .horizontal-nav {
+        width: 100%;
+        margin-left: 1.2rem;
+        /*-----------[ Navbar ]------------ */
+        nav {
+            position: fixed;
+            top: 0.7rem;
+            right: 1.3rem;
+            background-color: $secondary-color;
+            color: $third-color;
+            box-shadow: 0px 0.01rem 0.7rem 0px rgb(0 0 0 / 20%);
+            width: 80.5%;
+            @include flex-f-s;
+            justify-content: space-between;
+            @include b-r(0.3rem);
+            z-index: 500;
+            .left-nav {
+                float: left;
+                ul {
+                    list-style: none;
+                    @include flex-f-s;
+                    justify-content: space-between;
+                    padding: 1rem 0px;
+                    li {
+                        padding-left: 1.3rem;
+                        font-size: 1.3rem;
+                        cursor: pointer;
+                        .toggle-menu {
+                            background: none;
+                            border: none;
+                            width: 2.5rem;
+                            cursor: pointer;
+                            margin-top: 0.5rem;
+                            position: relative;
+                            display: none;
+                            &:focus {
+                                outline: none;
+                            }
+                            i {
+                                display: block;
+                                font-size: 1.5rem;
+                                color: $third-color;
+                            }
+                        }
+                        .stars {
+                            color: #ff9f43;
+                        }
+                        .tooltip {
+                            color: $secondary-color;
+                            background-color: $primary-color;
+                            padding: 0.2rem 0.5rem;
+                            position: absolute;
+                            top: 2rem;
+                            left: 1.8rem;
+                            font-size: 0.8rem;
+                            text-align: center;
+                            cursor: default;
+                            margin-top: 2.1rem;
+                            opacity: 0;
+                            z-index: 2000;
+                            @include b-r(0.3rem);
+                            &::before {
+                                content: '';
+                                border-width: 0.7rem;
+                                border-style: solid;
+                                height: 0;
+                                width: 0;
+                                position: absolute;
+                                top: -1.2rem;
+                                border-color: transparent transparent $primary-color transparent;
+                                @include transform(30%);
+                            }
+                        }
+                        &:hover .tooltip {
+                            opacity: 1;
+                        }
+                        #toolChat {
+                            left: 4.1rem;
+                        }
+                        #toolEmail {
+                            left: 6.9rem;
+                        }
+                        #toolTodo {
+                            left: 9.3rem;
+                        }
+                    }
+                }
+            }
+            .right-nav {
+                float: right;
+                @include flex-f-s;
+                justify-content: space-between;
+                width: 38%;
+                i {
+                    font-size: 1.2rem;
+                }
+                i:nth-child(1) {
+                    padding-left: 0;
+                }
+                .trans {
+                    width: 15%;
+                    cursor: pointer;
+                    @include flex-f-s;
+                    img {
+                        width: 28%;
+                        width: 70%;
+                        margin-right: 0.3rem;
+                    }
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+                .right-icons {
+                    @include flex-f-s;
+                    margin-left: 2rem;
+                    i {
+                        padding: 0 0.5rem;
+                    }
+                    .notification-link {
+                        position: relative;
+                        .notifi-number {
+                            position: absolute;
+                            right: 0.1rem;
+                            top: -0.5rem;
+                            font-size: 0.7rem;
+                            width: 1rem;
+                            height: 1rem;
+                            text-align: center;
+                            background-color: #ea5455;
+                            color: $secondary-color;
+                            display: inline-block;
+                            @include b-r(50%);
+                        }
+                    }
+                }
+                .profile {
+                    @include flex-f-s;
+                    margin-right: 0.7rem;
+                    .user-info {
+                        margin-right: 0.3rem;
+                    }
+                    h3 {
+                        font-size: 0.9rem;
+                    }
+                    p {
+                        font-size: 0.7rem;
+                        text-align: center;
+                    }
+                    img {
+                        width: 3.5rem;
+                        height: 3.5rem;
+                        @include b-r(50%);
+                    }
+                }
+            }
+            i {
+                cursor: pointer;
+                &:hover {
+                    color: #ff9f43;
+                }
+            }
+        }
+        /*-----------[ Search Icon Content ]------------ */
+        .form {
+            position: absolute;
+            top: 1rem;
+            // width: 96%;
+            width: 96.5%;
+            margin-left: 0.3rem;
+            display: none;
+            z-index: 520;
+            &.searchIcon-hide {
+                display: block;
+            }
+            .form-input {
+                width: 100%;
+                padding: 0.37rem 0.75rem;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                outline: 0;
+                box-shadow: none;
+                border: 0;
+                @include b-r(0.25rem);
+                // height: 3.6rem;
+                height: 3.8rem;
+                background-color: $secondary-color;
+                color: $third-color;
+                &::placeholder {
+                    color: $third-color;
+                }
+            }
+            // .close-icon {
+            //     position: absolute;
+            //     top: 0.7rem;
+            //     right: 1.5rem;
+            //     border: 0;
+            //     cursor: pointer;
+            //     background: $secondary-color;
+            //     i {
+            //         color: $third-color;
+            //         font-size: 1.5rem;
+            //         margin-top: 0.3rem;
+            //     }
+            // }
+        }
+        /*-----------[ Star Dropdown ]------------ */
+        .star-dropdown {
+            width: 18rem;
+            height: auto;
+            position: absolute;
+            top: 4rem;
+            left: 5.5rem;
+            background: $secondary-color;
+            color: $third-color;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125);
+            padding: 1rem 0;
+            margin-top: 1rem;
+            @include b-r(0.3rem);
+            display: none;
+            z-index: 20;
+            input {
+                width: 92%;
+                height: 2.5rem;
+                padding: 0 0.7rem;
+                margin: 0.3rem 0.7rem;
+                outline: none;
+                border: 0.01rem solid #eee;
+                background: $secondary-color;
+                @include b-r(0.3rem);
+                &:focus {
+                    border-color: $main-color;
+                }
+                &::placeholder {
+                    color: #bbb;
+                }
+            }
+            .star-content {
+                @include flex-f-s;
+                justify-content: space-between;
+                padding: 0.7rem;
+                a {
+                    text-decoration: none;
+                    padding: 0 1rem;
+                    font-size: 0.9rem;
+                    color: $third-color;
+                    i {
+                        padding-right: 0.7rem;
+                    }
+                }
+                .star {
+                    color: #ff9f43;
+                    padding-right: 0.7rem;
+                }
+                &:hover {
+                    background: #7367f038;
+                    a {
+                        color: $main-color;
+                    }
+                }
+            }
+            &.star-active {
+                display: block;
+            }
+        }
+        /*-----------[ Notification Dropdown ]------------ */
+        .notifi-dropdown {
+            width: 22rem;
+            height: auto;
+            position: absolute;
+            top: 4rem;
+            right: 5.5rem;
+            background: $secondary-color;
+            color: $third-color;
+            box-shadow: 0.14rem 0.14rem 0.2rem rgba(0, 0, 0, 0.125);
+            padding: 1rem;
+            margin-top: 1.1rem;
+            @include b-r(0.3rem);
+            display: none;
+            z-index: 20;
+            .notifi-content {
+                @include flex-f-s;
+                padding: 0.7rem 0;
+                border-bottom: 0.02rem solid rgba(82, 79, 79, 0.459);
+                &:last-child {
+                    border-bottom: 0px;
+                }
+                .notifi-img-content {
+                    margin-right: 1rem;
+                    .notifi-img {
+                        width: 3.5rem;
+                        height: 3.5rem;
+                        @include b-r(50%);
+                    }
+                }
+                .notifi-info {
+                    h4 {
+                        margin-bottom: 0.3rem;
+                    }
+                    p {
+                        color: $third-color;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+            &.noti-active {
+                display: block;
+            }
+        }
+    }
+    .page-header {
+        width: 95%;
+        margin-left: 0.2rem;
+        position: absolute;
+        top: 5rem;
+        left: 1rem;
+        z-index: 10;
+        /*-----------[ Shop Container ]------------ */
+        .shopContainer {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 98%;
+            /*-----------[ Shop Header ]------------ */
+            .shopHeader {
+                width: 100%;
+                // width: 95%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                .left {
+                    float: left;
+                    @include flex-f-s;
+                    justify-content: space-between;
+                    padding: 1.2rem;
+                    h2 {
+                        margin-right: 1.2rem;
+                        border-right: 0.01rem solid #cccccc54;
+                        padding-right: 1.2rem;
+                        color: $third-color;
+                        font-weight: 400;
+                    }
+                    .home-icon {
+                        color: $main-color;
+                        text-decoration: none;
+                    }
+                    .arrow-icon {
+                        font-size: 0.9rem;
+                    }
+                    i {
+                        padding-right: 0.7rem;
+                    }
+                    h4 {
+                        a {
+                            padding-right: 0.7rem;
+                            color: $main-color;
+                            text-decoration: none;
+                        }
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+                .right {
+                    float: right;
+                    position: absolute;
+                    top: 1.2rem;
+                    right: 0.5rem;
+                    background-color: $main-color;
+                    color: $secondary-color;
+                    width: 2rem;
+                    height: 2rem;
+                    @include b-r(0.3rem);
+                    @include flex-f-s;
+                    justify-content: center;
+                    i {
+                        font-size: 1rem;
+                        cursor: pointer;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        /*-----------[ setting Dropdown ]------------ */
+        .setting-dropdown {
+            width: 8.5rem;
+            position: absolute;
+            right: 1.6rem;
+            background: $secondary-color;
+            color: $third-color;
+            box-shadow: 0.1rem 0.1rem 0.2rem rgb(0 0 0 / 13%);
+            padding: 1rem 0;
+            margin-top: 0.7rem;
+            @include b-r(0.3rem);
+            display: none;
+            .setting-content {
+                @include flex-f-s;
+                padding: 0.7rem 1rem;
+                width: 100%;
+                i {
+                    margin-bottom: 0.3rem;
+                    padding-right: 0.7rem;
+                }
+                a {
+                    color: $third-color;
+                    font-size: 0.9rem;
+                    text-decoration: none;
+                    margin-top: -0.3rem;
+                }
+                &:hover {
+                    background: #7367f038;
+                    color: $main-color;
+                    a,
+                    i {
+                        color: $main-color;
+                    }
+                }
+            }
+            &.setting-active {
+                display: block;
+            }
+        }
+        /*-----------[ Toggle Menu ]------------ */
+        .toggle-menu-two {
+            background: none;
+            border: none;
+            width: 2.5rem;
+            cursor: pointer;
+            // margin-top: 0.5rem;
+            margin-top: 0;
+            // margin-right: 1.3rem;
+            margin-right: 0.3rem;
+            display: none;
+            position: relative;
+            &:focus {
+                outline: none;
+            }
+            i {
+                display: block;
+                font-size: 1.5rem;
+                color: $third-color;
+            }
+        }
+    }
+    .shopContent {
+        position: absolute;
+        top: 10rem;
+        left: 2rem;
+        width: 100%;
+        @include flex-f-s;
+        /*-----------[ Shop Filters ]------------ */
+        .first-content {
+            height: 90rem;
+            .filters {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 23%;
+                padding-left: 0.7rem;
+                h3 {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    padding-left: 0.7rem;
+                    margin-bottom: 1rem;
+                }
+                .filter-desc {
+                    width: 95%;
+                    height: 96%;
+                    padding: 0.7rem;
+                    border: 1px solid #ccc;
+                    box-shadow: 0 0 0.2rem 0 rgb(0 0 0 / 25%);
+                    background-color: $secondary-color;
+                    @include b-r(0.7rem);
+                    .closefilter {
+                        color: $main-color;
+                        margin: auto;
+                        margin-top: 0.3rem;
+                        display: none;
+                        position: absolute;
+                        right: 2.5rem;
+                    }
+                    .filter-desc-content {
+                        margin-bottom: 1.7rem;
+                        .filter-desc-title {
+                            h2 {
+                                font-size: 0.9rem;
+                                font-weight: 600;
+                                margin-bottom: 0.7rem;
+                            }
+                        }
+                        .filter-desc-header {
+                            div {
+                                padding-left: 0.7rem;
+                                margin-bottom: 0.5rem;
+                            }
+                            input {
+                                margin-right: 0.7rem;
+                            }
+                            input[type="radio"] {
+                                appearance: none;
+                                background-color: transparent;
+                                border: 0.1rem solid $third-color;
+                                display: inline-block;
+                                width: 1.1rem;
+                                height: 1.1rem;
+                                @include b-r(1.3rem);
+                                &:checked {
+                                    background: $main-color;
+                                    border: 0.1rem solid $main-color;
+                                }
+                            }
+                            .rang-values {
+                                background-color: $secondary-color;
+                                width: 7rem;
+                                position: relative;
+                                margin: auto;
+                                padding: 0.4rem 0.3rem;
+                                border: 0.01rem solid $main-color;
+                                @include b-r(0.3rem);
+                                text-align: center;
+                                font-weight: 600;
+                                font-size: 1rem;
+                                color: $main-color;
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    height: 0;
+                                    width: 0;
+                                    border-width: 0.5rem;
+                                    border-style: solid;
+                                    border-color: $main-color transparent transparent transparent;
+                                    margin: auto;
+                                    bottom: -1rem;
+                                    left: 0;
+                                    right: 0;
+                                }
+                            }
+                            .range-content {
+                                position: relative;
+                            }
+                            .slider-track {
+                                width: 100%;
+                                height: 0.3rem;
+                                margin-top: 2rem;
+                                @include b-r(0.3rem);
+                            }
+                            input[type="range"] {
+                                appearance: none;
+                                width: 100%;
+                                outline: none;
+                                position: absolute;
+                                margin: auto;
+                                top: 0.2rem;
+                                left: 0;
+                                background-color: transparent;
+                                pointer-events: none;
+                                &::-webkit-slider-thumb {
+                                    -webkit-appearance: none;
+                                    height: 1.1rem;
+                                    width: 1.1rem;
+                                    background-color: $main-color;
+                                    cursor: pointer;
+                                    @include b-r(0.7rem);
+                                    pointer-events: auto;
+                                    margin-top: -0.7rem;
+                                }
+                                &::-moz-range-thumb {
+                                    -moz-appearance: none;
+                                    height: 1.1rem;
+                                    width: 1.1rem;
+                                    background-color: $main-color;
+                                    cursor: pointer;
+                                    @include b-r(50%);
+                                    pointer-events: auto;
+                                }
+                                &::-ms-thumb {
+                                    appearance: none;
+                                    height: 1.1rem;
+                                    width: 1.1rem;
+                                    background-color: $main-color;
+                                    cursor: pointer;
+                                    @include b-r(50%);
+                                    pointer-events: auto;
+                                }
+                                &:active::-webkit-slider-thumb {
+                                    background-color: $secondary-color;
+                                    border: 0.2rem solid $main-color;
+                                }
+                            }
+                            .left {
+                                float: left;
+                                font-size: 1rem;
+                                i {
+                                    color: #ff9f43;
+                                }
+                                a {
+                                    text-decoration: none;
+                                    color: $main-color;
+                                }
+                            }
+                            .right {
+                                float: right;
+                                span {
+                                    font-size: 1rem;
+                                    margin-right: 0.8rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /*-----------[ Shop Description ]------------ */
+        .shopDescription {
+            position: absolute;
+            top: 0;
+            right: 2.5rem;
+            @include flex-f-s;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 76%;
+            height: 95%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            .second-content {
+                /*-----------[ Search Bar ]------------ */
+                .searchBar {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    /*-----------[ Search Heading ]------------ */
+                    .searchHeader {
+                        width: 100%;
+                        margin-left: 1.3rem;
+                        margin-bottom: 1.4rem;
+                        @include flex-f-s;
+                        justify-content: space-between;
+                        .left {
+                            float: left;
+                            margin-left: 1.3rem;
+                            @include flex-f-s;
+                            justify-content: space-between;
+                            p {
+                                font-size: 0.9rem;
+                                font-weight: 400;
+                            }
+                        }
+                        .right {
+                            float: right;
+                            @include flex-f-s;
+                            justify-content: space-between;
+                            width: 30%;
+                            position: relative;
+                            .feature-btn {
+                                width: 50%;
+                                margin-right: 1.3rem;
+                                position: relative;
+                            }
+                            button {
+                                color: $main-color;
+                                border: 1px solid $main-color;
+                                background-color: transparent;
+                                padding: 0.6rem 1rem;
+                                font-size: 1rem;
+                                font-weight: 300;
+                                width: 100%;
+                                cursor: pointer;
+                            }
+                            i {
+                                padding-left: 0.7rem;
+                            }
+                            .feature-icon {
+                                width: 50%;
+                                @include flex-f-s;
+                                button {
+                                    padding: 0.6rem 0.6rem 0.6rem 0;
+                                    width: 33%;
+                                }
+                            }
+                        }
+                    }
+                    /*-----------[ SearchBar Content ]------------ */
+                    .searchContent {
+                        width: 93.5%;
+                        height: 10%;
+                        margin-left: 2.5rem;
+                        background-color: $secondary-color;
+                        .searchBar-input {
+                            width: 100%;
+                            padding: 0.37rem 0.75rem;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            line-height: 1.5;
+                            outline: 0;
+                            box-shadow: none;
+                            border: 0;
+                            margin-top: -0.8rem;
+                            @include b-r(0.25rem);
+                            height: 3rem;
+                            background-color: $secondary-color;
+                            color: $third-color;
+                            &::placeholder {
+                                color: $third-color;
+                            }
+                        }
+                        #searchBar-icon {
+                            position: absolute;
+                            top: 4.2rem;
+                            right: 3rem;
+                            border: 0;
+                            cursor: pointer;
+                            background: $secondary-color;
+                            color: $third-color;
+                            font-weight: 600;
+                            font-size: 1rem;
+                        }
+                    }
+                    /*-----------[ Feature Dropdown ]------------ */
+                    .feature-dropdown {
+                        width: 8rem;
+                        position: absolute;
+                        top: 1.7rem;
+                        right: 8.5rem;
+                        background: $secondary-color;
+                        color: $third-color;
+                        box-shadow: 0.1rem 0.1rem 0.2rem rgb(0 0 0 / 13%);
+                        padding: 1rem 0;
+                        margin-top: 1.3rem;
+                        @include b-r(0.3rem);
+                        display: none;
+                        z-index: 18;
+                        .feature-content {
+                            @include flex-f-s;
+                            padding: 0.7rem 1rem;
+                            width: 100%;
+                            a {
+                                color: $third-color;
+                                text-decoration: none;
+                                font-size: 0.9rem;
+                                margin-top: -0.3rem;
+                                cursor: pointer;
+                            }
+                            &:hover {
+                                background: #7367f038;
+                                a {
+                                    color: $main-color;
+                                }
+                            }
+                        }
+                        &.feature-active {
+                            display: block;
+                        }
+                    }
+                }
+                /*-----------[ Search Filter ]------------ */
+                .searchFiltere-list {
+                    background-color: $secondary-color;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    max-height: 25rem;
+                    overflow-y: auto;
+                    li {
+                        display: flex;
+                        position: absolute;
+                        top: 15.3rem;
+                        left: 31.3rem;
+                        padding: 1.3rem;
+                        &:not(:last-of-type) {
+                            border-bottom: 0.01rem solid #eee;
+                        }
+                        &.hide {
+                            display: none;
+                        }
+                    }
+                    img {
+                        @include b-r(50%);
+                        object-fit: cover;
+                        height: 3.5rem;
+                        width: 3.5rem;
+                    }
+                    .search-info {
+                        margin-left: 0.7rem;
+                        h4 {
+                            margin: 0 0 0.7rem;
+                        }
+                        p {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+                /*-----------[ Setting Box ]------------ */
+                .settings-box {
+                    position: fixed;
+                    top: 0;
+                    right: -25rem;
+                    background: $secondary-color;
+                    width: 25rem;
+                    z-index: 2000;
+                    min-height: 100vh;
+                    border: 0.01rem solid $btn-bgcolor;
+                    color: $third-color;
+                    &.searchBox-hide {
+                        right: 0;
+                    }
+                    .settings-icon {
+                        position: absolute;
+                        left: -30px;
+                        top: 300px;
+                        background: $main-color;
+                        color: $secondary-color;
+                        text-align: center;
+                        cursor: pointer;
+                        @include b-r(0.3rem 0 0 0.3rem);
+                        i {
+                            padding: 0.6rem 0;
+                            width: 2rem;
+                            font-size: 1.2rem;
+                        }
+                    }
+                    .settings-container {
+                        position: absolute;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        height: 100%;
+                        .option-header {
+                            margin-top: 1rem;
+                            border-bottom: 0.5px solid #ccc;
+                            margin-left: 0;
+                            padding-left: 1.5rem;
+                            h3 {
+                                margin-bottom: 0.2rem;
+                                font-size: 1.3rem;
+                                font-weight: 600;
+                            }
+                            p {
+                                font-size: 0.9rem;
+                                margin-left: 0.3rem;
+                                padding-bottom: 1.5rem;
+                            }
+                            .close-btn {
+                                position: absolute;
+                                top: 1.4rem;
+                            }
+                        }
+                        .option-box {
+                            text-align: center;
+                            padding: 0.7rem 0 0 0.7rem;
+                            margin: 0.2rem;
+                            border-bottom: 0.5px solid #ccc;
+                            margin-left: 0;
+                            input[type="radio"] {
+                                appearance: none;
+                                background-color: transparent;
+                                border: 0.01rem solid $third-color;
+                                display: inline-block;
+                                width: 0.9rem;
+                                height: 0.9rem;
+                                margin-bottom: -0.1rem;
+                                @include b-r(1.3rem);
+                                &:checked {
+                                    background: $main-color;
+                                    border: 0.01rem solid $main-color;
+                                }
+                            }
+                            h4 {
+                                text-align: left;
+                                margin-bottom: 0.7rem;
+                                font-size: 1.2rem;
+                                font-weight: 400;
+                                display: block;
+                            }
+                            label {
+                                padding-right: 0.3rem;
+                                margin-right: 0.3rem;
+                            }
+                            .option-box-first,
+                            .option-box-second {
+                                margin-bottom: 2rem;
+                                margin-left: 0.7rem;
+                                .option-box-first-btn,
+                                .option-box-second-btn {
+                                    @include flex-f-s;
+                                    width: 100%;
+                                }
+                            }
+                            .option-box-second {
+                                div {
+                                    margin: 0 2rem;
+                                }
+                            }
+                            .option-box-third {
+                                @include flex-f-s;
+                                justify-content: space-between;
+                                margin-bottom: 1.3rem;
+                                margin-left: 0.7rem;
+                                .option-box-third-btn {
+                                    position: relative;
+                                    display: inline-block;
+                                    width: 3rem;
+                                    height: 1.5rem;
+                                    margin-right: 3rem;
+                                    input[type="checkbox"] {
+                                        opacity: 0;
+                                        width: 0;
+                                        height: 0;
+                                    }
+                                    span {
+                                        position: absolute;
+                                        cursor: pointer;
+                                        top: 0;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        background-color: #ccc;
+                                        @include b-r(2.5rem);
+                                        &:before {
+                                            position: absolute;
+                                            content: "";
+                                            height: 1.3rem;
+                                            width: 1.3rem;
+                                            left: 0;
+                                            bottom: 0.1rem;
+                                            background-color: $secondary-color;
+                                            @include b-r(50%);
+                                        }
+                                    }
+                                    input[type="checkbox"]:checked+.slider {
+                                        background-color: $main-color;
+                                    }
+                                    input[type="checkbox"]:focus+.slider {
+                                        box-shadow: 0 0 1px $main-color;
+                                    }
+                                    input[type="checkbox"]:checked+.slider:before {
+                                        @include transform(1.5rem);
+                                    }
+                                }
+                            }
+                            .option-box-forth {
+                                @include flex-f-s;
+                                justify-content: space-between;
+                                margin-bottom: 1.3rem;
+                                margin-left: 0.7rem;
+                                .option-box-forth-btn {
+                                    width: 50%;
+                                    select {
+                                        padding: 0.65rem 1rem;
+                                        color: #aaa;
+                                        font-size: 1rem;
+                                        letter-spacing: 0.1rem;
+                                        outline: none;
+                                        border: 0.01rem solid #ccc;
+                                        background: transparent;
+                                        width: 100%;
+                                        @include b-r(0.3rem);
+                                        option {
+                                            &.option-active {
+                                                background: $main-color;
+                                                color: $secondary-color;
+                                                padding: 0.7rem;
+                                            }
+                                        }
+                                        &:hover option {
+                                            color: $main-color;
+                                        }
+                                    }
+                                }
+                            }
+                            .option-box-fifth {
+                                margin-bottom: 2.5rem;
+                                display: block;
+                                .colors {
+                                    @include flex-f-s;
+                                    justify-content: space-between;
+                                    width: 80%;
+                                    margin-left: 3rem;
+                                    div {
+                                        width: 1.3rem;
+                                        height: 1.3rem;
+                                        @include b-r(0.3rem);
+                                    }
+                                    .colorDivFirst {
+                                        background-color: rgb(182, 8, 109);
+                                    }
+                                    .colorDivSecond {
+                                        background-color: #00f;
+                                    }
+                                    .colorDivThird {
+                                        background-color: darkgrey;
+                                    }
+                                    .colorDivForth {
+                                        background-color: #0f0;
+                                    }
+                                    .colorDivFifth {
+                                        background-color: #f00;
+                                    }
+                                    .colorDivSix {
+                                        background-color: orange;
+                                    }
+                                    .colorDivSeven {
+                                        background-color: #048eff;
+                                    }
+                                    .colorDivEight {
+                                        background-color: rgb(54, 39, 2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .third-content {
+                /*-----------[ Data ]------------ */
+                .shopDescriptionContent {
+                    position: absolute;
+                    top: 7rem;
+                    left: 1rem;
+                    width: 98%;
+                    height: 89%;
+                    @include flex-f-s;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    .card {
+                        border: 1px solid #ccc;
+                        width: 30%;
+                        height: 35%;
+                        margin-top: 50px;
+                        margin-left: 20px;
+                        position: relative;
+                        background-color: $secondary-color;
+                        @include b-r(0.3rem);
+                        &:hover {
+                            box-shadow: 0px 1px 6px 0 rgb(0 0 0 / 50%);
+                            transform: translateY(-0.7rem);
+                            -webkit-transform: translateY(-0.7rem);
+                            -moz-transform: translateY(-0.7rem);
+                            -ms-transform: translateY(-0.7rem);
+                            -o-transform: translateY(-0.7rem);
+                        }
+                        .image {
+                            &,
+                            img {
+                                width: 100%;
+                                padding: 15px;
+                            }
+                        }
+                        .card-info {
+                            margin-top: 22px;
+                            padding: 15px;
+                            .card-info-first {
+                                @include flex-f-s;
+                                justify-content: space-between;
+                                i {
+                                    color: #ff9f43;
+                                    font-size: 0.9em;
+                                }
+                                span {
+                                    margin-right: 3px;
+                                    font-weight: 700;
+                                    color: $third-color;
+                                }
+                            }
+                            .card-info-second {
+                                width: 100%;
+                                color: $third-color;
+                                h3 {
+                                    font-size: 1em;
+                                    font-weight: 600;
+                                }
+                                p {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    font-size: 0.9em;
+                                    margin: 0;
+                                }
+                            }
+                        }
+                        .card-link {
+                            @include flex-f-s;
+                            position: absolute;
+                            bottom: -1px;
+                            left: 1px;
+                            width: 100%;
+                            button {
+                                border: none;
+                                padding: 15px 24px;
+                                font-size: 0.9em;
+                                @include b-r(0.1rem);
+                                padding: 15px 18px;
+                                &:nth-child(1) {
+                                    background: $secondary-color;
+                                    color: $primary-color;
+                                    margin-left: -0.5px;
+                                    width: 45%;
+                                    &:hover {
+                                        background-color: #e3e3e3;
+                                        border-color: #ddd;
+                                    }
+                                }
+                                &:nth-child(2) {
+                                    background: $main-color;
+                                    padding: 15px 25px;
+                                    color: $secondary-color;
+                                    width: 60%;
+                                }
+                            }
+                            i {
+                                padding-right: 10.7px;
+                            }
+                            .heart-active {
+                                color: #ea5455;
+                            }
+                        }
+                    }
+                    /*-----------[ Landscape ]------------ */
+                    &.shopDescriptionContent-landscape {
+                        position: absolute;
+                        top: 92px;
+                        left: 1.2rem;
+                        width: 94%;
+                        height: 89%;
+                        display: block;
+                        .card-landscape {
+                            border: 1px solid #ccc;
+                            width: 100%;
+                            @include flex-f-s;
+                            justify-content: space-between;
+                            height: 16%;
+                            margin-top: 50px;
+                            margin-left: 20px;
+                            position: relative;
+                            background-color: $secondary-color;
+                            @include b-r(0.3rem);
+                            .image-landscape {
+                                &,
+                                img {
+                                    width: 50%;
+                                    padding: 15px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+                            }
+                            .card-info-landscape {
+                                margin-top: 22px;
+                                padding: 15px;
+                                position: absolute;
+                                width: 50%;
+                                top: 8px;
+                                left: 20%;
+                                border-right: 2px solid #ccc;
+                                height: 135px;
+                            }
+                            .card-link-landscape {
+                                position: absolute;
+                                width: 35%;
+                                top: 46px;
+                                display: inline-block;
+                                left: 680px;
+                                button {
+                                    &:nth-child(1) {
+                                        background: $btn-bgcolor;
+                                        color: $primary-color;
+                                        margin-left: -0.5px;
+                                        width: 60%;
+                                        margin-bottom: 20px;
+                                        &:hover {
+                                            background-color: #e3e3e3;
+                                            border-color: #ddd;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /*-----------[ Slider Buttons ]------------ */
+        .forth-content {
+            @include flex-f-s;
+            align-items: flex-start;
+            justify-content: space-between;
+            .slider-btn {
+                position: absolute;
+                bottom: 1.5rem;
+                left: 5rem;
+                @include flex-f-s;
+                justify-content: center;
+                width: 100%;
+                button,
+                i {
+                    color: $third-color;
+                    border: 1px solid $main-color;
+                    background: transparent;
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 0;
+                    height: 1.4rem;
+                    width: 1.4rem;
+                    @include b-r(100%);
+                    text-align: center;
+                    padding: 0.1rem 0.3rem 0.6rem;
+                    &:hover {
+                        background: $main-color;
+                        color: $secondary-color;
+                    }
+                }
+                button {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    padding: 0.2rem 0.3rem 0.6rem;
+                    &.first {
+                        left: 45%;
+                        &.slidActive {
+                            border: 1px solid $third-color;
+                        }
+                    }
+                    &.third {
+                        right: 45%;
+                    }
+                }
+                i {
+                    &.left {
+                        left: 41%;
+                    }
+                    &.right {
+                        right: 41%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*-----------[ Footer ]------------ */
+
+footer {
+    @include flex-f-s;
+    align-items: flex-start;
+    justify-content: space-between;
+    .fifth-content {
+        position: absolute;
+        top: 100rem;
+        left: 20rem;
+        @include flex-f-s;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        width: 77%;
+        p {
+            color: $third-color;
+            font-size: 0.9rem;
+            font-weight: 400;
+            span {
+                color: #7367f0;
+            }
+            i {
+                color: red;
+            }
+            &:nth-child(1) {
+                float: left;
+            }
+            &:nth-child(2) {
+                float: right;
+            }
+        }
+    }
+    .six-content {
+        /*-----------[ Button Up ]------------ */
+        .btn-up {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 2rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: $main-color;
+            cursor: pointer;
+            border: none;
+            @include b-r(0.3rem);
+            color: $secondary-color;
+            z-index: 111;
+            display: none;
+            &:hover {
+                box-shadow: 0px 5px 11px 0 rgb(0 0 0 / 70%);
+            }
+        }
+        /*-----------[ Buy Button ]------------ */
+        .buyBtn {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 5.5rem;
+            background: #ea5455;
+            width: 7%;
+            height: 2.5rem;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0px 3px 20px 6px #ea5455;
+            @include b-r(0.3rem);
+            color: $secondary-color;
+            z-index: 10;
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+
+/*-----------[ Theme ]------------ */
+
+.dark-mode {
+    background-color: $primary-color;
+    color: $third-color;
+    #sideNav,
+    #navbar,
+    #search,
+    .close-icon,
+    #notifiDropdown,
+    #settingDropdown,
+    #featureDropdown,
+    #settings-box {
+        background-color: $primary-color;
+    }
+    .sideNav {
+        .sideNav-links {
+            .sideNav-dropDown {
+                .dropdown-header,
+                .dropdown-content {
+                    background-color: $primary-color;
+                    color: $third-color;
+                }
+            }
+        }
+    }
+    .container {
+        .horizontal-nav {
+            nav {
+                .left-nav {
+                    ul {
+                        li {
+                            .tooltip {
+                                background-color: $secondary-color;
+                                color: $primary-color;
+                                &::before {
+                                    content: '';
+                                    border-color: transparent transparent $secondary-color transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .form {
+                .form-input {
+                    background-color: $primary-color;
+                }
+            }
+            .star-dropdown {
+                &,
+                input {
+                    background-color: $primary-color;
+                }
+            }
+        }
+        .shopContent {
+            .first-content {
+                .filters {
+                    .filter-desc {
+                        background-color: $primary-color;
+                        .filter-desc-content {
+                            .rang-values {
+                                background-color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+            .shopDescription {
+                .second-content {
+                    .searchBar {
+                        .searchContent {
+                            &,
+                            .searchBar-input,
+                            #searchBar-icon {
+                                background-color: $primary-color;
+                            }
+                            .searchBar-input {
+                                border: 0.01rem solid $third-color;
+                            }
+                        }
+                    }
+                    .settings-box {
+                        .option-box-third {
+                            .option-box-third-btn {
+                                span {
+                                    &:before {
+                                        background-color: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                        .option-box-forth {
+                            .option-box-forth-btn {
+                                select {
+                                    &,
+                                    option {
+                                        background-color: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .third-content {
+                    .shopDescriptionContent {
+                        .card {
+                            background-color: $primary-color;
+                            .card-link {
+                                button {
+                                    &:nth-child(1) {
+                                        background: $primary-color;
+                                        color: $secondary-color;
+                                        &:hover {
+                                            color: $primary-color;
+                                            background: $secondary-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*-----------[ Scrolling ]------------ */
+
+body::-webkit-scrollbar,
+.shopDescription::-webkit-scrollbar,
+.sideNav::-webkit-scrollbar,
+.settings-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track,
+.shopDescription::-webkit-scrollbar-track,
+.sideNav::-webkit-scrollbar-track,
+.settings-container::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(179, 178, 178);
+    @include b-r(0.3rem);
+}
+
+body::-webkit-scrollbar-thumb,
+.shopDescription::-webkit-scrollbar-thumb,
+.sideNav::-webkit-scrollbar-thumb,
+.settings-container::-webkit-scrollbar-thumb {
+    @include b-r(0.3rem);
+    background: #6e6b7b41;
+    &:hover {
+        background: $third-color;
+    }
+}
+
+
+/*-----------[ Media Queries ]------------ */
+
+@import "media";

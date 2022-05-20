@@ -1,0 +1,649 @@
+@include Lg {
+    html {
+        font-size: 95%;
+    }
+    .sideNav {
+        left: 0px;
+        width: 20%;
+    }
+    .container {
+        width: 77.5%;
+        .horizontal-nav {
+            nav {
+                width: 73%;
+                margin-right: 3.5rem;
+                .right-nav .right-icons {
+                    margin-left: 2.5rem;
+                }
+            }
+            .form {
+                width: 89%;
+                margin-left: 1.5rem;
+            }
+        }
+        .page-header {
+            width: 90%;
+            margin-left: 1.2rem;
+        }
+        .shopContent {
+            .first-content {
+                .filters {
+                    width: 30%;
+                }
+            }
+            .shopDescription {
+                width: 69%;
+                .second-content {
+                    .searchBar {
+                        .searchHeader {
+                            .right {
+                                width: 40%;
+                                .feature-btn {
+                                    width: 62%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .third-content {
+                    .shopDescriptionContent {
+                        &.shopDescriptionContent-landscape {
+                            .card-landscape {
+                                .card-link-landscape {
+                                    width: 42%;
+                                    left: 455px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .fifth-content {
+            width: 67%;
+        }
+        .six-content {
+            .btn-up {
+                right: 7rem;
+            }
+            .buyBtn {
+                right: 10.5rem;
+            }
+        }
+    }
+}
+
+@include Md-tab {
+    .sideNav {
+        left: -21.9rem;
+        z-index: 100000;
+        width: 25%;
+    }
+    .container {
+        width: 89%;
+        left: 0rem;
+        height: 115vh;
+        .horizontal-nav {
+            nav {
+                width: 96.5%;
+                margin-right: -0.2rem;
+                .left-nav {
+                    ul {
+                        li {
+                            .toggle-menu {
+                                display: inline-block;
+                            }
+                            .tooltip {
+                                left: 4rem;
+                            }
+                            #toolChat {
+                                left: 6.5rem;
+                            }
+                            #toolEmail {
+                                left: 9.2rem;
+                            }
+                            #toolTodo {
+                                left: 12rem;
+                            }
+                        }
+                    }
+                }
+                .right-nav {
+                    .right-icons {
+                        .notification-link .notifi-number {
+                            right: 0.1rem;
+                        }
+                    }
+                }
+            }
+            .form {
+                width: 96%;
+                margin-left: 0;
+                .form-input {
+                    height: 3.8rem;
+                }
+            }
+            .notifi-dropdown,
+            .star-dropdown {
+                top: 5rem;
+            }
+        }
+        .page-header {
+            width: 97%;
+            margin-left: 1.5rem;
+        }
+        .shopContent {
+            .first-content {
+                .filters {
+                    width: 30%;
+                }
+            }
+            .shopDescription {
+                right: -60px;
+                width: 79%;
+                .second-content {
+                    .searchBar {
+                        .searchHeader {
+                            .right {
+                                .feature-btn {
+                                    width: 62%;
+                                    margin-left: 2.3rem;
+                                }
+                            }
+                        }
+                        .feature-dropdown {
+                            right: 6.5rem;
+                        }
+                    }
+                    .settings-box {
+                        display: none;
+                    }
+                }
+                .third-content {
+                    .shopDescriptionContent {
+                        &.shopDescriptionContent-landscape {
+                            .card-landscape {
+                                width: 98%;
+                                .image-landscape {
+                                    &,
+                                    img {
+                                        top: 0.7rem;
+                                    }
+                                }
+                                .card-link-landscape {
+                                    width: 40%;
+                                    left: 478px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .fifth-content {
+            left: 5rem;
+            width: 85%;
+            padding-bottom: 0.2rem;
+        }
+    }
+}
+
+@include Md {
+    html {
+        font-size: 90%;
+    }
+    .container {
+        .horizontal-nav {
+            nav {
+                margin-right: -0.5rem;
+                .left-nav {
+                    .tooltip,
+                    i:nth-child(2),
+                    i:nth-child(3),
+                    i:nth-child(4),
+                    i:nth-child(5),
+                    .stars {
+                        display: none;
+                    }
+                }
+                .right-nav {
+                    width: 41%;
+                    i {
+                        padding: 0.7rem;
+                    }
+                    .trans {
+                        margin-left: -3rem;
+                    }
+                }
+            }
+        }
+        .page-header {
+            .toggle-menu-two {
+                display: inline-block;
+            }
+        }
+        .shopContent {
+            .first-content {
+                .filters {
+                    left: -390px;
+                    z-index: 15000;
+                    top: -4.9rem;
+                    width: 38%;
+                    h3 {
+                        margin-bottom: 0.1rem;
+                    }
+                }
+            }
+            .shopDescription {
+                width: 100%;
+                right: 0;
+                .second-content {
+                    .searchBar {
+                        .searchHeader {
+                            width: 98%;
+                            margin-left: 2.3rem;
+                        }
+                        .feature-dropdown {
+                            right: 8.5rem;
+                        }
+                    }
+                }
+                .third-content {
+                    .shopDescriptionContent {
+                        &.shopDescriptionContent-landscape {
+                            .card-landscape {
+                                .card-info-landscape {
+                                    width: 47%;
+                                }
+                                .card-link-landscape {
+                                    width: 42%;
+                                    left: 455px;
+                                    top: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .forth-content {
+                .slider-btn {
+                    left: 1rem;
+                }
+            }
+        }
+    }
+    footer {
+        .fifth-content {
+            width: 80%;
+        }
+    }
+}
+
+@include Sm {
+    .sideNav {
+        width: 35%;
+    }
+    .container {
+        .shopContent {
+            .shopDescription {
+                .third-content {
+                    .shopDescriptionContent {
+                        &.shopDescriptionContent-landscape {
+                            .card-landscape {
+                                .card-link-landscape {
+                                    left: 445px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include Xs {
+    .sideNav {
+        width: 40%;
+    }
+    .page-header {
+        .shopContainer {
+            margin-left: -3rem;
+        }
+    }
+    .container {
+        .horizontal-nav {
+            nav {
+                .right-nav {
+                    margin-right: 5rem;
+                    .trans {
+                        display: none;
+                    }
+                }
+            }
+            .form {
+                width: 94%;
+            }
+        }
+        .shopContent {
+            .first-content {
+                .filters {
+                    width: 70%;
+                }
+            }
+            .shopDescription {
+                right: 0;
+                .second-content {
+                    .searchBar {
+                        width: 100%;
+                        margin-left: -3rem;
+                        .searchHeader {
+                            width: 98%;
+                            margin-left: 2.3rem;
+                            .left {
+                                display: none;
+                            }
+                            .right {
+                                width: 75%;
+                                margin-left: 100px;
+                            }
+                        }
+                        .searchContent {
+                            #searchBar-icon {
+                                right: 0.6rem;
+                            }
+                        }
+                        .feature-dropdown {
+                            right: 14rem;
+                        }
+                    }
+                }
+                .third-content {
+                    .shopDescriptionContent {
+                        left: -1rem;
+                        .card {
+                            width: 45%;
+                        }
+                        &.shopDescriptionContent-landscape {
+                            height: 96%;
+                            left: -1.5rem;
+                            .card-landscape {
+                                height: 26%;
+                                .image-landscape {
+                                    &,
+                                    img {
+                                        width: 76%;
+                                        padding-left: 0;
+                                        left: -10px;
+                                    }
+                                }
+                                .card-info-landscape {
+                                    width: 61%;
+                                    left: 39%;
+                                    border-right: none;
+                                }
+                                .card-link-landscape {
+                                    // left: 76px;
+                                    width: 90%;
+                                    // top: 156px;
+                                    left: 170px;
+                                    top: 170px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .forth-content {
+                .slider-btn {
+                    button {
+                        &.first {
+                            left: 43%;
+                        }
+                        &.third {
+                            right: 43%;
+                        }
+                    }
+                    i {
+                        &.left {
+                            left: 38%;
+                        }
+                        &.right {
+                            right: 38%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .fifth-content {
+            text-align: center;
+            width: 65%;
+            left: 8rem;
+            display: block;
+            p {
+                &:nth-child(2) {
+                    position: absolute;
+                    top: 2rem;
+                    left: 5rem;
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+        .six-content {
+            .btn-up {
+                right: 2rem;
+            }
+            .buyBtn {
+                right: 5.5rem;
+                width: 14%;
+            }
+        }
+    }
+}
+
+@include Xxs {
+    html {
+        font-size: 80%;
+    }
+    .sideNav {
+        width: 55%;
+    }
+    .container {
+        .horizontal-nav {
+            nav {
+                width: 95%;
+                .right-nav {
+                    margin-right: 3.5rem;
+                    .theme,
+                    .cart-icon {
+                        display: none;
+                    }
+                }
+            }
+            .form {
+                width: 93%;
+            }
+        }
+        .page-header {
+            width: 95%;
+            .shopContainer {
+                .shopHeader {
+                    .left {
+                        h2 {
+                            border-right: none;
+                        }
+                        .home-icon,
+                        .arrow-icon,
+                        i,
+                        h4,
+                        p {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .shopContent {
+            .shopDescription {
+                .second-content {
+                    .searchBar {
+                        .searchHeader {
+                            .right {
+                                .feature-btn {
+                                    width: 71%;
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                        .feature-dropdown {
+                            right: 7rem;
+                        }
+                    }
+                }
+                .third-content {
+                    .shopDescriptionContent {
+                        .card {
+                            width: 97%;
+                            height: 45%;
+                        }
+                        &.shopDescriptionContent-landscape {
+                            height: 96%;
+                            left: -1.5rem;
+                            .card-landscape {
+                                .card-link-landscape {
+                                    left: 76px;
+                                    width: 90%;
+                                    top: 156px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .forth-content {
+                .slider-btn {
+                    button {
+                        &.first {
+                            left: 41%;
+                        }
+                        &.third {
+                            right: 41%;
+                        }
+                    }
+                    i {
+                        &.left {
+                            left: 35%;
+                        }
+                        &.right {
+                            right: 35%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .fifth-content {
+            width: 80%;
+            left: 3rem;
+        }
+        .six-content {
+            .buyBtn {
+                width: 17%;
+            }
+        }
+    }
+}
+
+@include Xxxs {
+    .sideNav {
+        .dash-number {
+            display: none;
+        }
+    }
+    .container {
+        .horizontal-nav {
+            nav {
+                width: 93.5%;
+                .right-nav {
+                    margin-right: 0.5rem;
+                    .right-icons {
+                        .theme,
+                        .search-icon,
+                        .cart-icon,
+                        .notification-link {
+                            display: none;
+                        }
+                    }
+                    .profile {
+                        .user-info {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .form {
+                display: none;
+            }
+        }
+        .shopContent {
+            .first-content {
+                .filters {
+                    width: 80%;
+                }
+            }
+            .shopDescription {
+                .second-content {
+                    .searchBar {
+                        .searchHeader {
+                            width: 100%;
+                            .right {
+                                width: 100%;
+                                margin-left: 0rem;
+                                .feature-btn {
+                                    width: 41%;
+                                    margin-left: 2.5rem;
+                                }
+                            }
+                        }
+                        .feature-dropdown {
+                            right: 11rem;
+                        }
+                    }
+                }
+                .third-content {
+                    .shopDescriptionContent {
+                        .card {
+                            height: 40%;
+                        }
+                        &.shopDescriptionContent-landscape {
+                            .card-landscape {
+                                .image-landscape {
+                                    &,
+                                    img {
+                                        left: 0px;
+                                    }
+                                }
+                                .card-link-landscape {
+                                    width: 97%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .fifth-content {
+            width: 90%;
+            left: 2rem;
+        }
+    }
+}

@@ -1,0 +1,2616 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.5s all ease-in-out;
+  -webkit-transition: 0.5s all ease-in-out;
+  -moz-transition: 0.5s all ease-in-out;
+  -ms-transition: 0.5s all ease-in-out;
+  -o-transition: 0.5s all ease-in-out;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  direction: ltr;
+  background-color: #f8f8f8;
+  color: #6e6b7b;
+  line-height: 1.7;
+}
+
+html {
+  font-size: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/*-----------[ Side Navigation ]------------ */
+.sideNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: fixed;
+  background: #fff;
+  height: 100%;
+  width: 17%;
+  left: 0;
+  top: 0;
+  -webkit-box-shadow: -0.6rem -0.3rem 1.4rem 0 rgba(34, 41, 47, 0.25);
+          box-shadow: -0.6rem -0.3rem 1.4rem 0 rgba(34, 41, 47, 0.25);
+  overflow-y: scroll;
+}
+.sideNav .sideNav-links {
+  list-style: none;
+  margin-left: 0.7rem;
+  padding-top: 1.4rem;
+  padding: auto;
+}
+.sideNav .sideNav-links .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.sideNav .sideNav-links .logo a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 80%;
+}
+.sideNav .sideNav-links .logo a img {
+  width: 19%;
+}
+.sideNav .sideNav-links .logo a h2 {
+  color: #7367f0;
+  padding-left: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+  font-size: 1.45rem;
+}
+.sideNav .sideNav-links .logo i {
+  color: #7367f0;
+  width: 20%;
+  margin: auto;
+  margin-top: 0.7rem;
+}
+.sideNav .sideNav-links .logo i.close {
+  display: none;
+}
+.sideNav .sideNav-links .header-content:hover {
+  transform: translateX(0.3rem);
+  -webkit-transform: translateX(0.3rem);
+  -moz-transform: translateX(0.3rem);
+  -ms-transform: translateX(0.3rem);
+  -o-transform: translateX(0.3rem);
+}
+.sideNav .sideNav-links .header-content i {
+  color: #6e6b7b;
+  margin-left: 0.3rem;
+}
+.sideNav .sideNav-links .header-content .btn {
+  color: #6e6b7b;
+  background-color: transparent;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  border: none;
+  cursor: pointer;
+}
+.sideNav .sideNav-links .header-content .dash-number {
+  position: absolute;
+  top: 0.8rem;
+  right: 2.3rem;
+  padding: 0px 0.3rem;
+  background-color: rgba(255, 159, 67, 0.12);
+  color: #ff9f43;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.sideNav .sideNav-links .sideNav-dropDown {
+  position: relative;
+  display: inline-block;
+  width: 98%;
+  margin-top: 1.4rem;
+}
+.sideNav .sideNav-links .sideNav-dropDown .dropdown-header:after {
+  content: "";
+  font: normal normal normal 17px/1 FontAwesome;
+  color: #6e6b7b;
+  right: 0.72rem;
+  top: 0.1rem;
+  height: 2rem;
+  padding: 1rem 0px 0px 0.6rem;
+  position: absolute;
+  cursor: pointer;
+}
+.sideNav .sideNav-links .sideNav-dropDown .dropdown-header.dropdown-Background {
+  background-color: #f5f5f5;
+  border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+}
+.sideNav .sideNav-links .sideNav-dropDown:hover .dropdown-header:after {
+  content: "";
+}
+.sideNav .sideNav-links .sideNav-dropDown .dropdown-content {
+  width: 100%;
+  display: none;
+  background: #fff;
+  min-width: 10rem;
+  z-index: 20;
+}
+.sideNav .sideNav-links .sideNav-dropDown .dropdown-content a {
+  color: #6e6b7bab;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+.sideNav .sideNav-links .sideNav-dropDown .dropdown-content a:hover {
+  transform: translateX(0.2rem);
+  -webkit-transform: translateX(0.2rem);
+  -moz-transform: translateX(0.2rem);
+  -ms-transform: translateX(0.2rem);
+  -o-transform: translateX(0.2rem);
+}
+.sideNav .sideNav-links .sideNav-dropDown .dropdown-content a i {
+  font-size: 0.7rem;
+  padding-right: 1rem;
+}
+.sideNav .sideNav-links .sideNav-dropDown .dropdown-content.dropdown-show {
+  display: block;
+}
+.sideNav .sideNav-links .sideNav-item {
+  margin-top: 1.4rem;
+}
+.sideNav .sideNav-links .sideNav-item span {
+  font-size: 0.8rem;
+  padding-left: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6e6b7bab;
+}
+.sideNav .sideNav-links .sideNav-item li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 1.1rem;
+}
+.sideNav .sideNav-links .sideNav-item li i {
+  padding-right: 2.3rem;
+  font-size: 1.2rem;
+  width: 12%;
+}
+.sideNav .sideNav-links .sideNav-item li h4 {
+  font-weight: 400;
+  width: 60%;
+}
+.sideNav .sideNav-links .sideNav-item .sideNav-dropDown {
+  display: inline-block;
+  margin-top: 0;
+  margin-left: -0.01rem;
+}
+.sideNav .sideNav-links .sideNav-item .sideNav-dropDown a i {
+  font-size: 0.72rem;
+  padding-right: 0.5rem;
+}
+.sideNav .sideNav-links .sideNav-item .header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  cursor: pointer;
+}
+.sideNav .sideNav-links .sideNav-item .btn {
+  padding: 0.7rem 0;
+}
+.sideNav .sideNav-links .sideNav-item .dropdown-header:after {
+  padding: 0.7rem 0px 0px 0.6rem;
+}
+.sideNav .sideNav-links .active {
+  background-color: #7367f0;
+  color: #fff !important;
+  -webkit-box-shadow: 0.01rem 0.01rem 0.3rem 0px rgba(0, 0, 0, 0.8);
+          box-shadow: 0.01rem 0.01rem 0.3rem 0px rgba(0, 0, 0, 0.8);
+  border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+  margin-top: 0.7rem;
+}
+.sideNav .sideNav-links .active i {
+  color: #fff;
+}
+
+/*-----------[ Page Content ]------------ */
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 83%;
+  left: 16rem;
+}
+.container .close-icon {
+  position: absolute;
+  top: 0.7rem;
+  right: 1.5rem;
+  border: 0;
+  cursor: pointer;
+  background: #fff;
+}
+.container .close-icon i {
+  color: #6e6b7b;
+  font-size: 1.5rem;
+  margin-top: 0.3rem;
+}
+.container .horizontal-nav {
+  width: 100%;
+  margin-left: 1.2rem;
+  /*-----------[ Navbar ]------------ */
+  /*-----------[ Search Icon Content ]------------ */
+  /*-----------[ Star Dropdown ]------------ */
+  /*-----------[ Notification Dropdown ]------------ */
+}
+.container .horizontal-nav nav {
+  position: fixed;
+  top: 0.7rem;
+  right: 1.3rem;
+  background-color: #fff;
+  color: #6e6b7b;
+  -webkit-box-shadow: 0px 0.01rem 0.7rem 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0.01rem 0.7rem 0px rgba(0, 0, 0, 0.2);
+  width: 80.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  z-index: 500;
+}
+.container .horizontal-nav nav .left-nav {
+  float: left;
+}
+.container .horizontal-nav nav .left-nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0px;
+}
+.container .horizontal-nav nav .left-nav ul li {
+  padding-left: 1.3rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.container .horizontal-nav nav .left-nav ul li .toggle-menu {
+  background: none;
+  border: none;
+  width: 2.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  position: relative;
+  display: none;
+}
+.container .horizontal-nav nav .left-nav ul li .toggle-menu:focus {
+  outline: none;
+}
+.container .horizontal-nav nav .left-nav ul li .toggle-menu i {
+  display: block;
+  font-size: 1.5rem;
+  color: #6e6b7b;
+}
+.container .horizontal-nav nav .left-nav ul li .stars {
+  color: #ff9f43;
+}
+.container .horizontal-nav nav .left-nav ul li .tooltip {
+  color: #fff;
+  background-color: #000;
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  top: 2rem;
+  left: 1.8rem;
+  font-size: 0.8rem;
+  text-align: center;
+  cursor: default;
+  margin-top: 2.1rem;
+  opacity: 0;
+  z-index: 2000;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.container .horizontal-nav nav .left-nav ul li .tooltip::before {
+  content: "";
+  border-width: 0.7rem;
+  border-style: solid;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: -1.2rem;
+  border-color: transparent transparent #000 transparent;
+  transform: translateX(30%);
+  -webkit-transform: translateX(30%);
+  -moz-transform: translateX(30%);
+  -ms-transform: translateX(30%);
+  -o-transform: translateX(30%);
+}
+.container .horizontal-nav nav .left-nav ul li:hover .tooltip {
+  opacity: 1;
+}
+.container .horizontal-nav nav .left-nav ul li #toolChat {
+  left: 4.1rem;
+}
+.container .horizontal-nav nav .left-nav ul li #toolEmail {
+  left: 6.9rem;
+}
+.container .horizontal-nav nav .left-nav ul li #toolTodo {
+  left: 9.3rem;
+}
+.container .horizontal-nav nav .right-nav {
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 38%;
+}
+.container .horizontal-nav nav .right-nav i {
+  font-size: 1.2rem;
+}
+.container .horizontal-nav nav .right-nav i:nth-child(1) {
+  padding-left: 0;
+}
+.container .horizontal-nav nav .right-nav .trans {
+  width: 15%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.container .horizontal-nav nav .right-nav .trans img {
+  width: 28%;
+  width: 70%;
+  margin-right: 0.3rem;
+}
+.container .horizontal-nav nav .right-nav .trans p {
+  font-size: 0.9rem;
+}
+.container .horizontal-nav nav .right-nav .right-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 2rem;
+}
+.container .horizontal-nav nav .right-nav .right-icons i {
+  padding: 0 0.5rem;
+}
+.container .horizontal-nav nav .right-nav .right-icons .notification-link {
+  position: relative;
+}
+.container .horizontal-nav nav .right-nav .right-icons .notification-link .notifi-number {
+  position: absolute;
+  right: 0.1rem;
+  top: -0.5rem;
+  font-size: 0.7rem;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  background-color: #ea5455;
+  color: #fff;
+  display: inline-block;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.container .horizontal-nav nav .right-nav .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-right: 0.7rem;
+}
+.container .horizontal-nav nav .right-nav .profile .user-info {
+  margin-right: 0.3rem;
+}
+.container .horizontal-nav nav .right-nav .profile h3 {
+  font-size: 0.9rem;
+}
+.container .horizontal-nav nav .right-nav .profile p {
+  font-size: 0.7rem;
+  text-align: center;
+}
+.container .horizontal-nav nav .right-nav .profile img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.container .horizontal-nav nav i {
+  cursor: pointer;
+}
+.container .horizontal-nav nav i:hover {
+  color: #ff9f43;
+}
+.container .horizontal-nav .form {
+  position: absolute;
+  top: 1rem;
+  width: 96.5%;
+  margin-left: 0.3rem;
+  display: none;
+  z-index: 520;
+}
+.container .horizontal-nav .form.searchIcon-hide {
+  display: block;
+}
+.container .horizontal-nav .form .form-input {
+  width: 100%;
+  padding: 0.37rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  height: 3.8rem;
+  background-color: #fff;
+  color: #6e6b7b;
+}
+.container .horizontal-nav .form .form-input::-webkit-input-placeholder {
+  color: #6e6b7b;
+}
+.container .horizontal-nav .form .form-input::-moz-placeholder {
+  color: #6e6b7b;
+}
+.container .horizontal-nav .form .form-input:-ms-input-placeholder {
+  color: #6e6b7b;
+}
+.container .horizontal-nav .form .form-input::-ms-input-placeholder {
+  color: #6e6b7b;
+}
+.container .horizontal-nav .form .form-input::placeholder {
+  color: #6e6b7b;
+}
+.container .horizontal-nav .star-dropdown {
+  width: 18rem;
+  height: auto;
+  position: absolute;
+  top: 4rem;
+  left: 5.5rem;
+  background: #fff;
+  color: #6e6b7b;
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125);
+          box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125);
+  padding: 1rem 0;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  display: none;
+  z-index: 20;
+}
+.container .horizontal-nav .star-dropdown input {
+  width: 92%;
+  height: 2.5rem;
+  padding: 0 0.7rem;
+  margin: 0.3rem 0.7rem;
+  outline: none;
+  border: 0.01rem solid #eee;
+  background: #fff;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.container .horizontal-nav .star-dropdown input:focus {
+  border-color: #7367f0;
+}
+.container .horizontal-nav .star-dropdown input::-webkit-input-placeholder {
+  color: #bbb;
+}
+.container .horizontal-nav .star-dropdown input::-moz-placeholder {
+  color: #bbb;
+}
+.container .horizontal-nav .star-dropdown input:-ms-input-placeholder {
+  color: #bbb;
+}
+.container .horizontal-nav .star-dropdown input::-ms-input-placeholder {
+  color: #bbb;
+}
+.container .horizontal-nav .star-dropdown input::placeholder {
+  color: #bbb;
+}
+.container .horizontal-nav .star-dropdown .star-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.7rem;
+}
+.container .horizontal-nav .star-dropdown .star-content a {
+  text-decoration: none;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  color: #6e6b7b;
+}
+.container .horizontal-nav .star-dropdown .star-content a i {
+  padding-right: 0.7rem;
+}
+.container .horizontal-nav .star-dropdown .star-content .star {
+  color: #ff9f43;
+  padding-right: 0.7rem;
+}
+.container .horizontal-nav .star-dropdown .star-content:hover {
+  background: #7367f038;
+}
+.container .horizontal-nav .star-dropdown .star-content:hover a {
+  color: #7367f0;
+}
+.container .horizontal-nav .star-dropdown.star-active {
+  display: block;
+}
+.container .horizontal-nav .notifi-dropdown {
+  width: 22rem;
+  height: auto;
+  position: absolute;
+  top: 4rem;
+  right: 5.5rem;
+  background: #fff;
+  color: #6e6b7b;
+  -webkit-box-shadow: 0.14rem 0.14rem 0.2rem rgba(0, 0, 0, 0.125);
+          box-shadow: 0.14rem 0.14rem 0.2rem rgba(0, 0, 0, 0.125);
+  padding: 1rem;
+  margin-top: 1.1rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  display: none;
+  z-index: 20;
+}
+.container .horizontal-nav .notifi-dropdown .notifi-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0.7rem 0;
+  border-bottom: 0.02rem solid rgba(82, 79, 79, 0.459);
+}
+.container .horizontal-nav .notifi-dropdown .notifi-content:last-child {
+  border-bottom: 0px;
+}
+.container .horizontal-nav .notifi-dropdown .notifi-content .notifi-img-content {
+  margin-right: 1rem;
+}
+.container .horizontal-nav .notifi-dropdown .notifi-content .notifi-img-content .notifi-img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.container .horizontal-nav .notifi-dropdown .notifi-content .notifi-info h4 {
+  margin-bottom: 0.3rem;
+}
+.container .horizontal-nav .notifi-dropdown .notifi-content .notifi-info p {
+  color: #6e6b7b;
+  font-size: 0.8rem;
+}
+.container .horizontal-nav .notifi-dropdown.noti-active {
+  display: block;
+}
+.container .page-header {
+  width: 95%;
+  margin-left: 0.2rem;
+  position: absolute;
+  top: 5rem;
+  left: 1rem;
+  z-index: 10;
+  /*-----------[ Shop Container ]------------ */
+  /*-----------[ setting Dropdown ]------------ */
+  /*-----------[ Toggle Menu ]------------ */
+}
+.container .page-header .shopContainer {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 98%;
+  /*-----------[ Shop Header ]------------ */
+}
+.container .page-header .shopContainer .shopHeader {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.container .page-header .shopContainer .shopHeader .left {
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.2rem;
+}
+.container .page-header .shopContainer .shopHeader .left h2 {
+  margin-right: 1.2rem;
+  border-right: 0.01rem solid #cccccc54;
+  padding-right: 1.2rem;
+  color: #6e6b7b;
+  font-weight: 400;
+}
+.container .page-header .shopContainer .shopHeader .left .home-icon {
+  color: #7367f0;
+  text-decoration: none;
+}
+.container .page-header .shopContainer .shopHeader .left .arrow-icon {
+  font-size: 0.9rem;
+}
+.container .page-header .shopContainer .shopHeader .left i {
+  padding-right: 0.7rem;
+}
+.container .page-header .shopContainer .shopHeader .left h4 a {
+  padding-right: 0.7rem;
+  color: #7367f0;
+  text-decoration: none;
+}
+.container .page-header .shopContainer .shopHeader .left p {
+  font-size: 1rem;
+}
+.container .page-header .shopContainer .shopHeader .right {
+  float: right;
+  position: absolute;
+  top: 1.2rem;
+  right: 0.5rem;
+  background-color: #7367f0;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.container .page-header .shopContainer .shopHeader .right i {
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+.container .page-header .setting-dropdown {
+  width: 8.5rem;
+  position: absolute;
+  right: 1.6rem;
+  background: #fff;
+  color: #6e6b7b;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.13);
+          box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.13);
+  padding: 1rem 0;
+  margin-top: 0.7rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  display: none;
+}
+.container .page-header .setting-dropdown .setting-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0.7rem 1rem;
+  width: 100%;
+}
+.container .page-header .setting-dropdown .setting-content i {
+  margin-bottom: 0.3rem;
+  padding-right: 0.7rem;
+}
+.container .page-header .setting-dropdown .setting-content a {
+  color: #6e6b7b;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: -0.3rem;
+}
+.container .page-header .setting-dropdown .setting-content:hover {
+  background: #7367f038;
+  color: #7367f0;
+}
+.container .page-header .setting-dropdown .setting-content:hover a,
+.container .page-header .setting-dropdown .setting-content:hover i {
+  color: #7367f0;
+}
+.container .page-header .setting-dropdown.setting-active {
+  display: block;
+}
+.container .page-header .toggle-menu-two {
+  background: none;
+  border: none;
+  width: 2.5rem;
+  cursor: pointer;
+  margin-top: 0;
+  margin-right: 0.3rem;
+  display: none;
+  position: relative;
+}
+.container .page-header .toggle-menu-two:focus {
+  outline: none;
+}
+.container .page-header .toggle-menu-two i {
+  display: block;
+  font-size: 1.5rem;
+  color: #6e6b7b;
+}
+.container .shopContent {
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  /*-----------[ Shop Filters ]------------ */
+  /*-----------[ Shop Description ]------------ */
+  /*-----------[ Slider Buttons ]------------ */
+}
+.container .shopContent .first-content {
+  height: 90rem;
+}
+.container .shopContent .first-content .filters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 23%;
+  padding-left: 0.7rem;
+}
+.container .shopContent .first-content .filters h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  padding-left: 0.7rem;
+  margin-bottom: 1rem;
+}
+.container .shopContent .first-content .filters .filter-desc {
+  width: 95%;
+  height: 96%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+}
+.container .shopContent .first-content .filters .filter-desc .closefilter {
+  color: #7367f0;
+  margin: auto;
+  margin-top: 0.3rem;
+  display: none;
+  position: absolute;
+  right: 2.5rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content {
+  margin-bottom: 1.7rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-title h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header div {
+  padding-left: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header input {
+  margin-right: 0.7rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 0.1rem solid #6e6b7b;
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 1.3rem;
+  -webkit-border-radius: 1.3rem;
+  -moz-border-radius: 1.3rem;
+  -ms-border-radius: 1.3rem;
+  -o-border-radius: 1.3rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header input[type=radio]:checked {
+  background: #7367f0;
+  border: 0.1rem solid #7367f0;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .rang-values {
+  background-color: #fff;
+  width: 7rem;
+  position: relative;
+  margin: auto;
+  padding: 0.4rem 0.3rem;
+  border: 0.01rem solid #7367f0;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #7367f0;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .rang-values::before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: #7367f0 transparent transparent transparent;
+  margin: auto;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .range-content {
+  position: relative;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .slider-track {
+  width: 100%;
+  height: 0.3rem;
+  margin-top: 2rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header input[type=range] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  margin: auto;
+  top: 0.2rem;
+  left: 0;
+  background-color: transparent;
+  pointer-events: none;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.1rem;
+  width: 1.1rem;
+  background-color: #7367f0;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+  pointer-events: auto;
+  margin-top: -0.7rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+  height: 1.1rem;
+  width: 1.1rem;
+  background-color: #7367f0;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  pointer-events: auto;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header input[type=range]::-ms-thumb {
+  appearance: none;
+  height: 1.1rem;
+  width: 1.1rem;
+  background-color: #7367f0;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  pointer-events: auto;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header input[type=range]:active::-webkit-slider-thumb {
+  background-color: #fff;
+  border: 0.2rem solid #7367f0;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .left {
+  float: left;
+  font-size: 1rem;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .left i {
+  color: #ff9f43;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .left a {
+  text-decoration: none;
+  color: #7367f0;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .right {
+  float: right;
+}
+.container .shopContent .first-content .filters .filter-desc .filter-desc-content .filter-desc-header .right span {
+  font-size: 1rem;
+  margin-right: 0.8rem;
+}
+.container .shopContent .shopDescription {
+  position: absolute;
+  top: 0;
+  right: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 76%;
+  height: 95%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container .shopContent .shopDescription .second-content {
+  /*-----------[ Search Bar ]------------ */
+  /*-----------[ Search Filter ]------------ */
+  /*-----------[ Setting Box ]------------ */
+}
+.container .shopContent .shopDescription .second-content .searchBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*-----------[ Search Heading ]------------ */
+  /*-----------[ SearchBar Content ]------------ */
+  /*-----------[ Feature Dropdown ]------------ */
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader {
+  width: 100%;
+  margin-left: 1.3rem;
+  margin-bottom: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader .left {
+  float: left;
+  margin-left: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader .left p {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader .right {
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30%;
+  position: relative;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader .right .feature-btn {
+  width: 50%;
+  margin-right: 1.3rem;
+  position: relative;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader .right button {
+  color: #7367f0;
+  border: 1px solid #7367f0;
+  background-color: transparent;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 100%;
+  cursor: pointer;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader .right i {
+  padding-left: 0.7rem;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader .right .feature-icon {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchHeader .right .feature-icon button {
+  padding: 0.6rem 0.6rem 0.6rem 0;
+  width: 33%;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchContent {
+  width: 93.5%;
+  height: 10%;
+  margin-left: 2.5rem;
+  background-color: #fff;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchContent .searchBar-input {
+  width: 100%;
+  padding: 0.37rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0;
+  margin-top: -0.8rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  height: 3rem;
+  background-color: #fff;
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchContent .searchBar-input::-webkit-input-placeholder {
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchContent .searchBar-input::-moz-placeholder {
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchContent .searchBar-input:-ms-input-placeholder {
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchContent .searchBar-input::-ms-input-placeholder {
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchContent .searchBar-input::placeholder {
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .second-content .searchBar .searchContent #searchBar-icon {
+  position: absolute;
+  top: 4.2rem;
+  right: 3rem;
+  border: 0;
+  cursor: pointer;
+  background: #fff;
+  color: #6e6b7b;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.container .shopContent .shopDescription .second-content .searchBar .feature-dropdown {
+  width: 8rem;
+  position: absolute;
+  top: 1.7rem;
+  right: 8.5rem;
+  background: #fff;
+  color: #6e6b7b;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.13);
+          box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.13);
+  padding: 1rem 0;
+  margin-top: 1.3rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  display: none;
+  z-index: 18;
+}
+.container .shopContent .shopDescription .second-content .searchBar .feature-dropdown .feature-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0.7rem 1rem;
+  width: 100%;
+}
+.container .shopContent .shopDescription .second-content .searchBar .feature-dropdown .feature-content a {
+  color: #6e6b7b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: -0.3rem;
+  cursor: pointer;
+}
+.container .shopContent .shopDescription .second-content .searchBar .feature-dropdown .feature-content:hover {
+  background: #7367f038;
+}
+.container .shopContent .shopDescription .second-content .searchBar .feature-dropdown .feature-content:hover a {
+  color: #7367f0;
+}
+.container .shopContent .shopDescription .second-content .searchBar .feature-dropdown.feature-active {
+  display: block;
+}
+.container .shopContent .shopDescription .second-content .searchFiltere-list {
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 25rem;
+  overflow-y: auto;
+}
+.container .shopContent .shopDescription .second-content .searchFiltere-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 15.3rem;
+  left: 31.3rem;
+  padding: 1.3rem;
+}
+.container .shopContent .shopDescription .second-content .searchFiltere-list li:not(:last-of-type) {
+  border-bottom: 0.01rem solid #eee;
+}
+.container .shopContent .shopDescription .second-content .searchFiltere-list li.hide {
+  display: none;
+}
+.container .shopContent .shopDescription .second-content .searchFiltere-list img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.container .shopContent .shopDescription .second-content .searchFiltere-list .search-info {
+  margin-left: 0.7rem;
+}
+.container .shopContent .shopDescription .second-content .searchFiltere-list .search-info h4 {
+  margin: 0 0 0.7rem;
+}
+.container .shopContent .shopDescription .second-content .searchFiltere-list .search-info p {
+  font-size: 0.8rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box {
+  position: fixed;
+  top: 0;
+  right: -25rem;
+  background: #fff;
+  width: 25rem;
+  z-index: 2000;
+  min-height: 100vh;
+  border: 0.01rem solid #f5f5f5;
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .second-content .settings-box.searchBox-hide {
+  right: 0;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-icon {
+  position: absolute;
+  left: -30px;
+  top: 300px;
+  background: #7367f0;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.3rem 0 0 0.3rem;
+  -webkit-border-radius: 0.3rem 0 0 0.3rem;
+  -moz-border-radius: 0.3rem 0 0 0.3rem;
+  -ms-border-radius: 0.3rem 0 0 0.3rem;
+  -o-border-radius: 0.3rem 0 0 0.3rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-icon i {
+  padding: 0.6rem 0;
+  width: 2rem;
+  font-size: 1.2rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container {
+  position: absolute;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-header {
+  margin-top: 1rem;
+  border-bottom: 0.5px solid #ccc;
+  margin-left: 0;
+  padding-left: 1.5rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-header h3 {
+  margin-bottom: 0.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-header p {
+  font-size: 0.9rem;
+  margin-left: 0.3rem;
+  padding-bottom: 1.5rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-header .close-btn {
+  position: absolute;
+  top: 1.4rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box {
+  text-align: center;
+  padding: 0.7rem 0 0 0.7rem;
+  margin: 0.2rem;
+  border-bottom: 0.5px solid #ccc;
+  margin-left: 0;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 0.01rem solid #6e6b7b;
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-bottom: -0.1rem;
+  border-radius: 1.3rem;
+  -webkit-border-radius: 1.3rem;
+  -moz-border-radius: 1.3rem;
+  -ms-border-radius: 1.3rem;
+  -o-border-radius: 1.3rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box input[type=radio]:checked {
+  background: #7367f0;
+  border: 0.01rem solid #7367f0;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box h4 {
+  text-align: left;
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  display: block;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box label {
+  padding-right: 0.3rem;
+  margin-right: 0.3rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-first,
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-second {
+  margin-bottom: 2rem;
+  margin-left: 0.7rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-first .option-box-first-btn,
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-first .option-box-second-btn,
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-second .option-box-first-btn,
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-second .option-box-second-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-second div {
+  margin: 0 2rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-third {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.3rem;
+  margin-left: 0.7rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-third .option-box-third-btn {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+  margin-right: 3rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-third .option-box-third-btn input[type=checkbox] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-third .option-box-third-btn span {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 2.5rem;
+  -webkit-border-radius: 2.5rem;
+  -moz-border-radius: 2.5rem;
+  -ms-border-radius: 2.5rem;
+  -o-border-radius: 2.5rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-third .option-box-third-btn span:before {
+  position: absolute;
+  content: "";
+  height: 1.3rem;
+  width: 1.3rem;
+  left: 0;
+  bottom: 0.1rem;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-third .option-box-third-btn input[type=checkbox]:checked + .slider {
+  background-color: #7367f0;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-third .option-box-third-btn input[type=checkbox]:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #7367f0;
+          box-shadow: 0 0 1px #7367f0;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-third .option-box-third-btn input[type=checkbox]:checked + .slider:before {
+  transform: translateX(1.5rem);
+  -webkit-transform: translateX(1.5rem);
+  -moz-transform: translateX(1.5rem);
+  -ms-transform: translateX(1.5rem);
+  -o-transform: translateX(1.5rem);
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-forth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.3rem;
+  margin-left: 0.7rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-forth .option-box-forth-btn {
+  width: 50%;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-forth .option-box-forth-btn select {
+  padding: 0.65rem 1rem;
+  color: #aaa;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  outline: none;
+  border: 0.01rem solid #ccc;
+  background: transparent;
+  width: 100%;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-forth .option-box-forth-btn select option.option-active {
+  background: #7367f0;
+  color: #fff;
+  padding: 0.7rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-forth .option-box-forth-btn select:hover option {
+  color: #7367f0;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth {
+  margin-bottom: 2.5rem;
+  display: block;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin-left: 3rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors div {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors .colorDivFirst {
+  background-color: #b6086d;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors .colorDivSecond {
+  background-color: #00f;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors .colorDivThird {
+  background-color: darkgrey;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors .colorDivForth {
+  background-color: #0f0;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors .colorDivFifth {
+  background-color: #f00;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors .colorDivSix {
+  background-color: orange;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors .colorDivSeven {
+  background-color: #048eff;
+}
+.container .shopContent .shopDescription .second-content .settings-box .settings-container .option-box .option-box-fifth .colors .colorDivEight {
+  background-color: #362702;
+}
+.container .shopContent .shopDescription .third-content {
+  /*-----------[ Data ]------------ */
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent {
+  position: absolute;
+  top: 7rem;
+  left: 1rem;
+  width: 98%;
+  height: 89%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /*-----------[ Landscape ]------------ */
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card {
+  border: 1px solid #ccc;
+  width: 30%;
+  height: 35%;
+  margin-top: 50px;
+  margin-left: 20px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card:hover {
+  -webkit-box-shadow: 0px 1px 6px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 6px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-0.7rem);
+  -webkit-transform: translateY(-0.7rem);
+  -moz-transform: translateY(-0.7rem);
+  -ms-transform: translateY(-0.7rem);
+  -o-transform: translateY(-0.7rem);
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .image,
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .image img {
+  width: 100%;
+  padding: 15px;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-info {
+  margin-top: 22px;
+  padding: 15px;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-info .card-info-first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-info .card-info-first i {
+  color: #ff9f43;
+  font-size: 0.9em;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-info .card-info-first span {
+  margin-right: 3px;
+  font-weight: 700;
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-info .card-info-second {
+  width: 100%;
+  color: #6e6b7b;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-info .card-info-second h3 {
+  font-size: 1em;
+  font-weight: 600;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-info .card-info-second p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+  margin: 0;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: absolute;
+  bottom: -1px;
+  left: 1px;
+  width: 100%;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link button {
+  border: none;
+  padding: 15px 24px;
+  font-size: 0.9em;
+  border-radius: 0.1rem;
+  -webkit-border-radius: 0.1rem;
+  -moz-border-radius: 0.1rem;
+  -ms-border-radius: 0.1rem;
+  -o-border-radius: 0.1rem;
+  padding: 15px 18px;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link button:nth-child(1) {
+  background: #fff;
+  color: #000;
+  margin-left: -0.5px;
+  width: 45%;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link button:nth-child(1):hover {
+  background-color: #e3e3e3;
+  border-color: #ddd;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link button:nth-child(2) {
+  background: #7367f0;
+  padding: 15px 25px;
+  color: #fff;
+  width: 60%;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link i {
+  padding-right: 10.7px;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link .heart-active {
+  color: #ea5455;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape {
+  position: absolute;
+  top: 92px;
+  left: 1.2rem;
+  width: 94%;
+  height: 89%;
+  display: block;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape {
+  border: 1px solid #ccc;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 16%;
+  margin-top: 50px;
+  margin-left: 20px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .image-landscape,
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .image-landscape img {
+  width: 50%;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-info-landscape {
+  margin-top: 22px;
+  padding: 15px;
+  position: absolute;
+  width: 50%;
+  top: 8px;
+  left: 20%;
+  border-right: 2px solid #ccc;
+  height: 135px;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape {
+  position: absolute;
+  width: 35%;
+  top: 46px;
+  display: inline-block;
+  left: 680px;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape button:nth-child(1) {
+  background: #f5f5f5;
+  color: #000;
+  margin-left: -0.5px;
+  width: 60%;
+  margin-bottom: 20px;
+}
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape button:nth-child(1):hover {
+  background-color: #e3e3e3;
+  border-color: #ddd;
+}
+.container .shopContent .forth-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .shopContent .forth-content .slider-btn {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+.container .shopContent .forth-content .slider-btn button,
+.container .shopContent .forth-content .slider-btn i {
+  color: #6e6b7b;
+  border: 1px solid #7367f0;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  text-align: center;
+  padding: 0.1rem 0.3rem 0.6rem;
+}
+.container .shopContent .forth-content .slider-btn button:hover,
+.container .shopContent .forth-content .slider-btn i:hover {
+  background: #7367f0;
+  color: #fff;
+}
+.container .shopContent .forth-content .slider-btn button {
+  width: 1.4rem;
+  height: 1.4rem;
+  padding: 0.2rem 0.3rem 0.6rem;
+}
+.container .shopContent .forth-content .slider-btn button.first {
+  left: 45%;
+}
+.container .shopContent .forth-content .slider-btn button.first.slidActive {
+  border: 1px solid #6e6b7b;
+}
+.container .shopContent .forth-content .slider-btn button.third {
+  right: 45%;
+}
+.container .shopContent .forth-content .slider-btn i.left {
+  left: 41%;
+}
+.container .shopContent .forth-content .slider-btn i.right {
+  right: 41%;
+}
+
+/*-----------[ Footer ]------------ */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+footer .fifth-content {
+  position: absolute;
+  top: 100rem;
+  left: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 1rem;
+  width: 77%;
+}
+footer .fifth-content p {
+  color: #6e6b7b;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+footer .fifth-content p span {
+  color: #7367f0;
+}
+footer .fifth-content p i {
+  color: red;
+}
+footer .fifth-content p:nth-child(1) {
+  float: left;
+}
+footer .fifth-content p:nth-child(2) {
+  float: right;
+}
+footer .six-content {
+  /*-----------[ Button Up ]------------ */
+  /*-----------[ Buy Button ]------------ */
+}
+footer .six-content .btn-up {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #7367f0;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  color: #fff;
+  z-index: 111;
+  display: none;
+}
+footer .six-content .btn-up:hover {
+  -webkit-box-shadow: 0px 5px 11px 0 rgba(0, 0, 0, 0.7);
+          box-shadow: 0px 5px 11px 0 rgba(0, 0, 0, 0.7);
+}
+footer .six-content .buyBtn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 5.5rem;
+  background: #ea5455;
+  width: 7%;
+  height: 2.5rem;
+  cursor: pointer;
+  border: none;
+  -webkit-box-shadow: 0px 3px 20px 6px #ea5455;
+          box-shadow: 0px 3px 20px 6px #ea5455;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  color: #fff;
+  z-index: 10;
+}
+footer .six-content .buyBtn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*-----------[ Theme ]------------ */
+.dark-mode {
+  background-color: #000;
+  color: #6e6b7b;
+}
+.dark-mode #sideNav,
+.dark-mode #navbar,
+.dark-mode #search,
+.dark-mode .close-icon,
+.dark-mode #notifiDropdown,
+.dark-mode #settingDropdown,
+.dark-mode #featureDropdown,
+.dark-mode #settings-box {
+  background-color: #000;
+}
+.dark-mode .sideNav .sideNav-links .sideNav-dropDown .dropdown-header,
+.dark-mode .sideNav .sideNav-links .sideNav-dropDown .dropdown-content {
+  background-color: #000;
+  color: #6e6b7b;
+}
+.dark-mode .container .horizontal-nav nav .left-nav ul li .tooltip {
+  background-color: #fff;
+  color: #000;
+}
+.dark-mode .container .horizontal-nav nav .left-nav ul li .tooltip::before {
+  content: "";
+  border-color: transparent transparent #fff transparent;
+}
+.dark-mode .container .horizontal-nav .form .form-input {
+  background-color: #000;
+}
+.dark-mode .container .horizontal-nav .star-dropdown,
+.dark-mode .container .horizontal-nav .star-dropdown input {
+  background-color: #000;
+}
+.dark-mode .container .shopContent .first-content .filters .filter-desc {
+  background-color: #000;
+}
+.dark-mode .container .shopContent .first-content .filters .filter-desc .filter-desc-content .rang-values {
+  background-color: #000;
+}
+.dark-mode .container .shopContent .shopDescription .second-content .searchBar .searchContent,
+.dark-mode .container .shopContent .shopDescription .second-content .searchBar .searchContent .searchBar-input,
+.dark-mode .container .shopContent .shopDescription .second-content .searchBar .searchContent #searchBar-icon {
+  background-color: #000;
+}
+.dark-mode .container .shopContent .shopDescription .second-content .searchBar .searchContent .searchBar-input {
+  border: 0.01rem solid #6e6b7b;
+}
+.dark-mode .container .shopContent .shopDescription .second-content .settings-box .option-box-third .option-box-third-btn span:before {
+  background-color: #000;
+}
+.dark-mode .container .shopContent .shopDescription .second-content .settings-box .option-box-forth .option-box-forth-btn select,
+.dark-mode .container .shopContent .shopDescription .second-content .settings-box .option-box-forth .option-box-forth-btn select option {
+  background-color: #000;
+}
+.dark-mode .container .shopContent .shopDescription .third-content .shopDescriptionContent .card {
+  background-color: #000;
+}
+.dark-mode .container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link button:nth-child(1) {
+  background: #000;
+  color: #fff;
+}
+.dark-mode .container .shopContent .shopDescription .third-content .shopDescriptionContent .card .card-link button:nth-child(1):hover {
+  color: #000;
+  background: #fff;
+}
+
+/*-----------[ Scrolling ]------------ */
+body::-webkit-scrollbar,
+.shopDescription::-webkit-scrollbar,
+.sideNav::-webkit-scrollbar,
+.settings-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track,
+.shopDescription::-webkit-scrollbar-track,
+.sideNav::-webkit-scrollbar-track,
+.settings-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px #b3b2b2;
+          box-shadow: inset 0 0 5px #b3b2b2;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+
+body::-webkit-scrollbar-thumb,
+.shopDescription::-webkit-scrollbar-thumb,
+.sideNav::-webkit-scrollbar-thumb,
+.settings-container::-webkit-scrollbar-thumb {
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  background: #6e6b7b41;
+}
+body::-webkit-scrollbar-thumb:hover,
+.shopDescription::-webkit-scrollbar-thumb:hover,
+.sideNav::-webkit-scrollbar-thumb:hover,
+.settings-container::-webkit-scrollbar-thumb:hover {
+  background: #6e6b7b;
+}
+
+/*-----------[ Media Queries ]------------ */
+@media (max-width: 1300px) {
+  html {
+    font-size: 95%;
+  }
+
+  .sideNav {
+    left: 0px;
+    width: 20%;
+  }
+
+  .container {
+    width: 77.5%;
+  }
+  .container .horizontal-nav nav {
+    width: 73%;
+    margin-right: 3.5rem;
+  }
+  .container .horizontal-nav nav .right-nav .right-icons {
+    margin-left: 2.5rem;
+  }
+  .container .horizontal-nav .form {
+    width: 89%;
+    margin-left: 1.5rem;
+  }
+  .container .page-header {
+    width: 90%;
+    margin-left: 1.2rem;
+  }
+  .container .shopContent .first-content .filters {
+    width: 30%;
+  }
+  .container .shopContent .shopDescription {
+    width: 69%;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader .right {
+    width: 40%;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader .right .feature-btn {
+    width: 62%;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape {
+    width: 42%;
+    left: 455px;
+  }
+
+  footer .fifth-content {
+    width: 67%;
+  }
+  footer .six-content .btn-up {
+    right: 7rem;
+  }
+  footer .six-content .buyBtn {
+    right: 10.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .sideNav {
+    left: -21.9rem;
+    z-index: 100000;
+    width: 25%;
+  }
+
+  .container {
+    width: 89%;
+    left: 0rem;
+    height: 115vh;
+  }
+  .container .horizontal-nav nav {
+    width: 96.5%;
+    margin-right: -0.2rem;
+  }
+  .container .horizontal-nav nav .left-nav ul li .toggle-menu {
+    display: inline-block;
+  }
+  .container .horizontal-nav nav .left-nav ul li .tooltip {
+    left: 4rem;
+  }
+  .container .horizontal-nav nav .left-nav ul li #toolChat {
+    left: 6.5rem;
+  }
+  .container .horizontal-nav nav .left-nav ul li #toolEmail {
+    left: 9.2rem;
+  }
+  .container .horizontal-nav nav .left-nav ul li #toolTodo {
+    left: 12rem;
+  }
+  .container .horizontal-nav nav .right-nav .right-icons .notification-link .notifi-number {
+    right: 0.1rem;
+  }
+  .container .horizontal-nav .form {
+    width: 96%;
+    margin-left: 0;
+  }
+  .container .horizontal-nav .form .form-input {
+    height: 3.8rem;
+  }
+  .container .horizontal-nav .notifi-dropdown,
+.container .horizontal-nav .star-dropdown {
+    top: 5rem;
+  }
+  .container .page-header {
+    width: 97%;
+    margin-left: 1.5rem;
+  }
+  .container .shopContent .first-content .filters {
+    width: 30%;
+  }
+  .container .shopContent .shopDescription {
+    right: -60px;
+    width: 79%;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader .right .feature-btn {
+    width: 62%;
+    margin-left: 2.3rem;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .feature-dropdown {
+    right: 6.5rem;
+  }
+  .container .shopContent .shopDescription .second-content .settings-box {
+    display: none;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape {
+    width: 98%;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .image-landscape,
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .image-landscape img {
+    top: 0.7rem;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape {
+    width: 40%;
+    left: 478px;
+  }
+
+  footer .fifth-content {
+    left: 5rem;
+    width: 85%;
+    padding-bottom: 0.2rem;
+  }
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 90%;
+  }
+
+  .container .horizontal-nav nav {
+    margin-right: -0.5rem;
+  }
+  .container .horizontal-nav nav .left-nav .tooltip,
+.container .horizontal-nav nav .left-nav i:nth-child(2),
+.container .horizontal-nav nav .left-nav i:nth-child(3),
+.container .horizontal-nav nav .left-nav i:nth-child(4),
+.container .horizontal-nav nav .left-nav i:nth-child(5),
+.container .horizontal-nav nav .left-nav .stars {
+    display: none;
+  }
+  .container .horizontal-nav nav .right-nav {
+    width: 41%;
+  }
+  .container .horizontal-nav nav .right-nav i {
+    padding: 0.7rem;
+  }
+  .container .horizontal-nav nav .right-nav .trans {
+    margin-left: -3rem;
+  }
+  .container .page-header .toggle-menu-two {
+    display: inline-block;
+  }
+  .container .shopContent .first-content .filters {
+    left: -390px;
+    z-index: 15000;
+    top: -4.9rem;
+    width: 38%;
+  }
+  .container .shopContent .first-content .filters h3 {
+    margin-bottom: 0.1rem;
+  }
+  .container .shopContent .shopDescription {
+    width: 100%;
+    right: 0;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader {
+    width: 98%;
+    margin-left: 2.3rem;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .feature-dropdown {
+    right: 8.5rem;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-info-landscape {
+    width: 47%;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape {
+    width: 42%;
+    left: 455px;
+    top: 35px;
+  }
+  .container .shopContent .forth-content .slider-btn {
+    left: 1rem;
+  }
+
+  footer .fifth-content {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .sideNav {
+    width: 35%;
+  }
+
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape {
+    left: 445px;
+  }
+}
+@media (max-width: 576px) {
+  .sideNav {
+    width: 40%;
+  }
+
+  .page-header .shopContainer {
+    margin-left: -3rem;
+  }
+
+  .container .horizontal-nav nav .right-nav {
+    margin-right: 5rem;
+  }
+  .container .horizontal-nav nav .right-nav .trans {
+    display: none;
+  }
+  .container .horizontal-nav .form {
+    width: 94%;
+  }
+  .container .shopContent .first-content .filters {
+    width: 70%;
+  }
+  .container .shopContent .shopDescription {
+    right: 0;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar {
+    width: 100%;
+    margin-left: -3rem;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader {
+    width: 98%;
+    margin-left: 2.3rem;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader .left {
+    display: none;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader .right {
+    width: 75%;
+    margin-left: 100px;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchContent #searchBar-icon {
+    right: 0.6rem;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .feature-dropdown {
+    right: 14rem;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent {
+    left: -1rem;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent .card {
+    width: 45%;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape {
+    height: 96%;
+    left: -1.5rem;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape {
+    height: 26%;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .image-landscape,
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .image-landscape img {
+    width: 76%;
+    padding-left: 0;
+    left: -10px;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-info-landscape {
+    width: 61%;
+    left: 39%;
+    border-right: none;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape {
+    width: 90%;
+    left: 170px;
+    top: 170px;
+  }
+  .container .shopContent .forth-content .slider-btn button.first {
+    left: 43%;
+  }
+  .container .shopContent .forth-content .slider-btn button.third {
+    right: 43%;
+  }
+  .container .shopContent .forth-content .slider-btn i.left {
+    left: 38%;
+  }
+  .container .shopContent .forth-content .slider-btn i.right {
+    right: 38%;
+  }
+
+  footer .fifth-content {
+    text-align: center;
+    width: 65%;
+    left: 8rem;
+    display: block;
+  }
+  footer .fifth-content p:nth-child(2) {
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+    padding-bottom: 1rem;
+  }
+  footer .six-content .btn-up {
+    right: 2rem;
+  }
+  footer .six-content .buyBtn {
+    right: 5.5rem;
+    width: 14%;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 80%;
+  }
+
+  .sideNav {
+    width: 55%;
+  }
+
+  .container .horizontal-nav nav {
+    width: 95%;
+  }
+  .container .horizontal-nav nav .right-nav {
+    margin-right: 3.5rem;
+  }
+  .container .horizontal-nav nav .right-nav .theme,
+.container .horizontal-nav nav .right-nav .cart-icon {
+    display: none;
+  }
+  .container .horizontal-nav .form {
+    width: 93%;
+  }
+  .container .page-header {
+    width: 95%;
+  }
+  .container .page-header .shopContainer .shopHeader .left h2 {
+    border-right: none;
+  }
+  .container .page-header .shopContainer .shopHeader .left .home-icon,
+.container .page-header .shopContainer .shopHeader .left .arrow-icon,
+.container .page-header .shopContainer .shopHeader .left i,
+.container .page-header .shopContainer .shopHeader .left h4,
+.container .page-header .shopContainer .shopHeader .left p {
+    display: none;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader .right .feature-btn {
+    width: 71%;
+    margin-left: 0;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .feature-dropdown {
+    right: 7rem;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent .card {
+    width: 97%;
+    height: 45%;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape {
+    height: 96%;
+    left: -1.5rem;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape {
+    left: 76px;
+    width: 90%;
+    top: 156px;
+  }
+  .container .shopContent .forth-content .slider-btn button.first {
+    left: 41%;
+  }
+  .container .shopContent .forth-content .slider-btn button.third {
+    right: 41%;
+  }
+  .container .shopContent .forth-content .slider-btn i.left {
+    left: 35%;
+  }
+  .container .shopContent .forth-content .slider-btn i.right {
+    right: 35%;
+  }
+
+  footer .fifth-content {
+    width: 80%;
+    left: 3rem;
+  }
+  footer .six-content .buyBtn {
+    width: 17%;
+  }
+}
+@media (max-width: 340px) {
+  .sideNav .dash-number {
+    display: none;
+  }
+
+  .container .horizontal-nav nav {
+    width: 93.5%;
+  }
+  .container .horizontal-nav nav .right-nav {
+    margin-right: 0.5rem;
+  }
+  .container .horizontal-nav nav .right-nav .right-icons .theme,
+.container .horizontal-nav nav .right-nav .right-icons .search-icon,
+.container .horizontal-nav nav .right-nav .right-icons .cart-icon,
+.container .horizontal-nav nav .right-nav .right-icons .notification-link {
+    display: none;
+  }
+  .container .horizontal-nav nav .right-nav .profile .user-info {
+    display: none;
+  }
+  .container .horizontal-nav .form {
+    display: none;
+  }
+  .container .shopContent .first-content .filters {
+    width: 80%;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader {
+    width: 100%;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader .right {
+    width: 100%;
+    margin-left: 0rem;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .searchHeader .right .feature-btn {
+    width: 41%;
+    margin-left: 2.5rem;
+  }
+  .container .shopContent .shopDescription .second-content .searchBar .feature-dropdown {
+    right: 11rem;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent .card {
+    height: 40%;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .image-landscape,
+.container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .image-landscape img {
+    left: 0px;
+  }
+  .container .shopContent .shopDescription .third-content .shopDescriptionContent.shopDescriptionContent-landscape .card-landscape .card-link-landscape {
+    width: 97%;
+  }
+
+  footer .fifth-content {
+    width: 90%;
+    left: 2rem;
+  }
+}
